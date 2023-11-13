@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { HashRouter, Navigate, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import './App.css'
 import LanadingPage from './Components/LandingPage';
 import SignUpPage from './Components/SignUpPage';
@@ -16,7 +16,6 @@ class App extends Component {
             <Route path='signUp' Component={SignUpPage} />
             <Route path='login' Component={LoginPage} />
             <Route path='dashboard' Component={Dashboard} />
-            <Route path='*' element={<Navigate to='/' />} />
           </Routes>
         </div>
         <Footer/>
