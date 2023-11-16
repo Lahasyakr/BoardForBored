@@ -1,6 +1,5 @@
 import * as React from "react";
 import Header from "../CommonComponents/Header";
-import Footer from "../CommonComponents/Footer";
 import { Link } from "react-router-dom";
 
 export default function LandingPage(props) {
@@ -26,7 +25,7 @@ export default function LandingPage(props) {
             </div>
           </div>
         </section>
-        <div className="items-stretch flex w-[460px] max-w-full gap-5 mt-2 pl-10 pr-9 md:pl-28 rounded-2xl max-md:mt-10">
+        <div className="items-stretch flex w-[460px] max-w-full gap-5 mt-6 pl-10 pr-9 md:pl-28 rounded-2xl max-md:mt-10">
           <Link to={"/signUp"}>
             <a
               href="/signUp"
@@ -44,18 +43,18 @@ export default function LandingPage(props) {
             </a>
           </Link>
         </div>
-        <section className="self-stretch flex w-full justify-between gap-5 mt-3 pl-8 pr-9 md:pl-24 max-md:max-w-full max-md:flex-wrap max-md:mt-10">
+        <section className="self-stretch flex w-full justify-between gap-5 mt-8 pl-8 pr-9 md:pl-24 max-md:max-w-full max-md:flex-wrap max-md:mt-10">
           <h2 className=" justify-center text-yellow-500 text-3xl leading-10 grow px-5 max-md:max-w-full max-md:text-2xl">
             Ready to borrow your fun?
           </h2>
-          <div className="items-stretch flex justify-between gap-5 mt-5 px-5 self-end max-md:mt-10">
+         {/*  <div className="items-stretch flex justify-between gap-5 mt-5 px-5 self-end max-md:mt-10">
             <div className="text-black text-center text-base">
               Privacy policy
             </div>
             <div className="text-black text-center text-base whitespace-nowrap">
               Terms & conditions
             </div>
-          </div>
+          </div> */}
         </section>
       </div>
     </>
