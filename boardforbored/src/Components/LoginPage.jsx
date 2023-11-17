@@ -1,7 +1,8 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 export default function LoginPage(props) {
+    const navigate = useNavigate();
     return (
         <form className="bg-white flex flex-col">
              <img
@@ -16,13 +17,13 @@ export default function LoginPage(props) {
                     Login to rent your game now!
                 </p>
             </section>
-            <div className="text-white text-xl leading-5 whitespace-nowrap justify-center bg-gray-600 self-center w-[550px] max-w-full mt-5 px-5 py-4 rounded-xl max-md:pl-2.5">
-                <input type="text" id="username" className="border-none focus:outline-none bg-gray-600 placeholder:text-white" placeholder="Username" />
+            <div className="text-white text-xl leading-5  whitespace-nowrap justify-center bg-gray-600 self-center w-[450px] max-w-full mt-5 px-5 py-4 rounded-xl max-md:pl-2.5">
+                <input type="text" id="username" className="border-none focus:outline-none bg-gray-600 placeholder:text-white h-4" placeholder="Username" />
             </div>
-            <div className="text-white text-xl leading-5 whitespace-nowrap justify-center bg-gray-600 self-center w-[550px] max-w-full mt-5 px-5 py-4 rounded-xl max-md:pl-2.5">
-                <input type="password" id="password" className="border-none focus:outline-none bg-gray-600 placeholder:text-white" placeholder="Password" />
+            <div className="text-white text-xl leading-5 whitespace-nowrap justify-center bg-gray-600 self-center w-[450px] max-w-full mt-5 px-5 py-4 rounded-xl max-md:pl-2.5">
+                <input type="password" id="password" className="border-none focus:outline-none bg-gray-600 placeholder:text-white h-4" placeholder="Password" />
             </div>
-            <div className="items-stretch self-center flex w-[550px] max-w-full justify-between gap-5 mt-9 px-5 max-md:flex-wrap">
+            <div className="items-stretch self-center flex w-[450px] max-w-full justify-between gap-5 mt-9 px-5 max-md:flex-wrap">
                 <div className="items-stretch flex justify-between gap-2">
                     <input
                         type="checkbox"
@@ -38,7 +39,7 @@ export default function LoginPage(props) {
                 </a>
             </div>
             <Link to={"/dashboard"}
-                className="text-white text-center text-2xl leading-5 capitalize whitespace-nowrap justify-center items-center shadow-sm bg-yellow-500 self-center w-[550px] max-w-full mt-5 px-5 py-4 mb-2 rounded-xl">
+                className="h-12 text-white text-center text-xl leading-5 capitalize whitespace-nowrap justify-center items-center shadow-sm bg-yellow-500 self-center w-[450px] max-w-full mt-5 px-5 py-4 mb-2 rounded-xl">
                 Login
             </Link>
         </form>

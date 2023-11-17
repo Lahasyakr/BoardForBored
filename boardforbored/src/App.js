@@ -6,6 +6,7 @@ import SignUpPage from './Components/SignUpPage';
 import LoginPage from './Components/LoginPage';
 import Footer from './CommonComponents/Footer';
 import Dashboard from './Components/Dashboard/Dashboard';
+import SelectedGame from './Components/GameDetails.js/SelectedGame';
 class App extends Component {
   render() {
     return (
@@ -16,6 +17,7 @@ class App extends Component {
             <Route path='signUp' Component={SignUpPage} />
             <Route path='login' Component={LoginPage} />
             <Route path='dashboard' Component={Dashboard} />
+            <Route path='selected' Component={SelectedGame}/>
           </Routes>
         </div>
         <Footer/>
