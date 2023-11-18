@@ -9,6 +9,9 @@ export default function Rating(props) {
     let ratingData = gamedetails[props.id - 1]?.rating;
     const [openModal, setOpenModal] = React.useState(false);
     const [newRating, setNewRating] = React.useState(5);
+    const [newreview, setNewReview] = React.useState("");
+
+
     return (
         <>
             <section className="flex flex-col w-full items-stretch pt-3 pb-10">
@@ -25,9 +28,9 @@ export default function Rating(props) {
                     2 global ratings
                 </h2>
                 <button onClick={() => { setOpenModal(true) }}
-                    className="text-white text-center text-xl leading-5 whitespace-nowrap justify-center items-stretch shadow-sm bg-gray-600 bg-opacity-80 w-[209px] max-w-full mt-4 px-1 py-3 rounded-xl self-start"
+                    className="text-gray-700 text-center text-xl leading-5 whitespace-nowrap justify-center items-stretch shadow-sm bg-gray-300 bg-opacity-80 w-[209px] max-w-full mt-4 px-1 py-3 rounded-xl self-start"
                 >
-                    Add review
+                    Add a review
                 </button>
                 {ratingData?.individualRating?.map((item, key) => {
                     return (<div id={key} className="flex flex-col items-stretch pt-5">
@@ -48,17 +51,26 @@ export default function Rating(props) {
             {openModal && <Modal
                 title="Add a review"
                 open={openModal}
-                onSubmit={() => setOpenModal(false)}
+                onSubmit={() => {
+                    ratingData?.individualRating.push({
+                        rating: newRating,
+                        name: "new name",
+                        desc: "newreview"
+                    })
+                    setOpenModal(false)
+                }}
                 onCancel={() => setOpenModal(false)}
                 okText={"Submit"}
                 cancelText={"Cancel"}
             >
                 <Rate value={newRating} onChange={(value) => setNewRating(value)} />
-                <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-600">Your message</label>
-                <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border 
+                {/*  <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-600">Your message</label> */}
+                <textarea id="message" rows="4" onChange={(e) => setNewReview(e.value)}
+                    className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border 
                     border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 
-                    dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="Description..."></textarea>
+                    placeholder:text-white
+                    dark:placeholder-white-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="Your message..."></textarea>
             </Modal>}
         </ >
     )
