@@ -33,7 +33,7 @@ export default function Rating(props) {
                     Add a review
                 </button>
                 {ratingData?.individualRating?.map((item, key) => {
-                    return (<div id={key} className="flex flex-col items-stretch pt-5">
+                    return (<div key={key} className="flex flex-col items-stretch pt-5">
                         <div className="flex flex-row gap-2 pt-2 ">
                             <Avatar size={"large"}>{item?.name[0]}</Avatar>
                             <div className="justify-center text-black text-center text-xl leading-8 self-center my-auto">

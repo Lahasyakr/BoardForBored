@@ -4,6 +4,7 @@ export const gamedetails =
             id: 1,
             name: "Jaipur",
             price: "3",
+            quantity:4,
             rating: {
                 global: 3,
                 individualRating: [

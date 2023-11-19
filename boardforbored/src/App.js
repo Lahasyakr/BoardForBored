@@ -7,6 +7,8 @@ import LoginPage from './Components/LoginPage';
 import Footer from './CommonComponents/Footer';
 import Dashboard from './Components/Dashboard/Dashboard';
 import SelectedGame from './Components/GameDetails.js/SelectedGame';
+import Cart from './Components/Cart/cart';
+
 class App extends Component {
   render() {
     return (
@@ -17,10 +19,11 @@ class App extends Component {
             <Route path='signUp' Component={SignUpPage} />
             <Route path='login' Component={LoginPage} />
             <Route path='dashboard' Component={Dashboard} />
-            <Route path='selected' Component={SelectedGame}/>
+            <Route path='selected' Component={SelectedGame} />
+            <Route path='cart' Component={Cart} />
           </Routes>
         </div>
-        <Footer/>
+        <Footer />
       </HashRouter>
     );
   }
