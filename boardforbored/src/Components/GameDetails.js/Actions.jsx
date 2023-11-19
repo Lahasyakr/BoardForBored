@@ -5,7 +5,8 @@ import { gamedetails } from "../../data/gamedata";
 import { Select, DatePicker } from 'antd';
 import '../../CSS/select.css'
 import customParseFormat from 'dayjs/plugin/customParseFormat';
-import {addToCart} from "../../redux/actions";
+import { addToCart } from "../../redux/actions";
+import { useNavigate } from "react-router-dom";
 
 const { RangePicker } = DatePicker;
 
@@ -21,7 +22,7 @@ export default function Actions(props) {
     let gameItem = gamedetails[props.id - 1];
     const [quantity, setQuantity] = React.useState(0);
     const [days, setDays] = React.useState([]);
-
+    const navigate = useNavigate();
     const dispatch = useDispatch();
     const cartItems = useSelector((o) => o.cartreducer.cartItems);
 
@@ -46,7 +47,7 @@ export default function Actions(props) {
     const onAddToCart = () => {
         console.log(cartItems)
         if (cartItems?.length === 0) {
-            dispatch(addToCart({game: gameItem, days: days, quantity: quantity }))
+            dispatch(addToCart({ game: gameItem, days: days, quantity: quantity }))
         }
     }
     return (
@@ -92,6 +93,7 @@ export default function Actions(props) {
                         <div className="items-stretch flex w-full max-w-full px-5 flex-col mt-5 mb-2.5 self-end">
                             <button
                                 type="submit"
+                                onClick={() => navigate('/checkout', { state: { total: (gameItem.price * days) * quantity } })}
                                 disabled={days == 0 || quantity == 0}
                                 className="text-gray-600 text-xl font-bold leading-6 w-[90%] whitespace-nowrap bg-yellow-500 items-center px-5 py-3.5 rounded-3xl disabled:opacity-50"
                             >

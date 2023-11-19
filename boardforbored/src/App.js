@@ -8,6 +8,7 @@ import Footer from './CommonComponents/Footer';
 import Dashboard from './Components/Dashboard/Dashboard';
 import SelectedGame from './Components/GameDetails.js/SelectedGame';
 import Cart from './Components/Cart/cart';
+import OrderDetails from './Components/Checkout/OrderDetails';
 
 class App extends Component {
   render() {
@@ -21,6 +22,7 @@ class App extends Component {
             <Route path='dashboard' Component={Dashboard} />
             <Route path='selected' Component={SelectedGame} />
             <Route path='cart' Component={Cart} />
+            <Route path='checkout' Component={OrderDetails} />
           </Routes>
         </div>
         <Footer />

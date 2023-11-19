@@ -63,18 +63,18 @@ export default function NonEmptyCart(props) {
                     })}
                 </section>
                 <div className="bg-gray-600 self-stretch w-[2px] shrink-0 h-[576px]" />
-                <section className="flex basis-[40%] flex-col items-stretch mt-24 max-md:mt-10">
+                <section className="flex basis-[30%] flex-col items-stretch mt-24 max-md:mt-10">
                     <div className="flex items-stretch justify-between gap-5">
                         <h2 className="justify-center text-gray-600 text-opacity-90 text-center text-3xl font-bold leading-8">
-                            Subtotal
+                            Total
                         </h2>
                         <div className="justify-center text-gray-600 text-opacity-90 text-center text-3xl font-bold leading-8">
                             ${subTotal()}
                         </div>
                     </div>
                     <div className="text-white text-center text-3xl leading-5 capitalize whitespace-nowrap justify-center items-stretch
-                     shadow-sm bg-yellow-500 mt-20 px-4 py-4 rounded-xl max-md:pr-0 max-md:mt-10">
-                        <a href="..." className="block w-full h-full font-bold">
+                     shadow-sm bg-yellow-500 mt-12 px-4 py-4 rounded-xl max-md:pr-0 max-md:mt-8">
+                        <a href="..." className="block w-full h-full font-200">
                             Proceed to Checkout
                         </a>
                     </div>
