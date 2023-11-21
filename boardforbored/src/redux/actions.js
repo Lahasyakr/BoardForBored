@@ -1,4 +1,4 @@
- export const addToCart = (item) => {
+export const addToCart = (item) => {
     return {
         type: 'ADD_CART',
         newItem: item
@@ -11,4 +11,11 @@ export const removeFromCart = (index) => {
         index: index
     };
 };
+
+export const saveUser = (user) => {
+    return {
+        type: 'SAVE_USER',
+        user: user
+    }
+}
 

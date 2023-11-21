@@ -1,8 +1,38 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { saveUser } from "../redux/actions";
 export default function SignUpPage(props) {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const [errorText, setErrorText] = React.useState({ username: null, email: null, password: null, password_confirm: null });
+    const onSignUp = () => {
+        let username = document.getElementById('username')?.value || "";
+        let email = document.getElementById('email')?.value || "";
+        let password = document.getElementById('password')?.value || "";
+        let password_confirm = document.getElementById('confirm-password')?.value || "";
+        let newObj = errorText;
+        if (!username) newObj.username = "Please enter username";
+        if (!email) newObj.email = "Please enter email";
+        if (!password) newObj.password = "Please enter password";
+        if (!password_confirm) newObj.password_confirm = "Please re-enter password";
+        if (password !== password_confirm) {
+            newObj.password_confirm = "Password is not matching, please re-enter"
+        }
+        if(!/\S+@\S+\.\S+/.test(email))newObj.email = "Please enter a valid email"
+        setErrorText(prevErrorTxt => ({
+            ...prevErrorTxt,newObj
+        }))
+        if(!errorText.username && !errorText.email && !errorText.password && !errorText.password_confirm ){
+            dispatch(saveUser({
+                name:username,email:email,password:password, userName:username
+            }))
+
+            navigate('/login')
+        }
+
+    }
     return (
         <div className="bg-white flex flex-col">
             <div className="flex items-center self-center w-[250px] gap-5 max-w-full">
@@ -26,22 +56,42 @@ export default function SignUpPage(props) {
                     Create an account and Sign up!
                 </p>
             </div>
-            <div className="text-white text-xl leading-5 whitespace-nowrap justify-center bg-gray-600 self-center w-[450px] max-w-full mt-5 px-5 py-4 rounded-xl max-md:pl-2.5">
-                <input type="text" id="username" className="h-4 border-none focus:outline-none bg-gray-600 placeholder:text-white" placeholder="Username" />
+            <div className="text-white text-md leading-5 whitespace-nowrap justify-center bg-gray-600 self-center w-[450px] max-w-full mt-5 px-5 py-4 rounded-xl max-md:pl-2.5">
+                <input type="text" id="username" className="h-auto border-none focus:outline-none bg-gray-600 placeholder:text-white"
+                    placeholder="Username" onChange={() => setErrorText(prevErrorTxt => ({
+                        ...prevErrorTxt,
+                        username: null
+                    }))} />
             </div>
-            <div className="text-white text-xl leading-5 whitespace-nowrap justify-center bg-gray-600 self-center w-[450px] max-w-full mt-5 px-5 py-4 rounded-xl max-md:pl-2.5">
-                <input type="email" id="email" className="h-4 border-none focus:outline-none bg-gray-600 placeholder:text-white" placeholder="Email" />
+            {errorText.username && < span className="self-center w-[450px] text-red-500 pl-1">{errorText.username}</span>}
+            <div className="text-white text-md leading-5 whitespace-nowrap justify-center bg-gray-600 self-center w-[450px] max-w-full mt-5 px-5 py-4 rounded-xl max-md:pl-2.5">
+                <input type="email" id="email" className="h-auto border-none focus:outline-none bg-gray-600 placeholder:text-white"
+                    placeholder="Email" onChange={() => setErrorText(prevErrorTxt => ({
+                        ...prevErrorTxt,
+                        email: null
+                    }))} />
             </div>
-            <div className="text-white text-xl leading-5 whitespace-nowrap justify-center bg-gray-600 self-center w-[450px] max-w-full mt-5 px-5 py-4 rounded-xl max-md:pl-2.5">
-                <input type="password" id="password" className="h-4 border-none focus:outline-none bg-gray-600 placeholder:text-white" placeholder="Password" />
+            {errorText.email && < span className="self-center w-[450px] text-red-500 pl-1">{errorText.email}</span>}
+            <div className="text-white text-md leading-5 whitespace-nowrap justify-center bg-gray-600 self-center w-[450px] max-w-full mt-5 px-5 py-4 rounded-xl max-md:pl-2.5">
+                <input type="password" id="password" className="h-auto border-none focus:outline-none bg-gray-600 placeholder:text-white"
+                    placeholder="Password" onChange={() => setErrorText(prevErrorTxt => ({
+                        ...prevErrorTxt,
+                        password: null
+                    }))} />
             </div>
-            <div className="text-white text-xl leading-5 whitespace-nowrap justify-center bg-gray-600 self-center w-[450px] max-w-full mt-5 px-5 py-4 rounded-xl max-md:pl-2.5">
-                <input type="password" id="confirm-password" className="h-4 border-none focus:outline-none bg-gray-600 placeholder:text-white" placeholder="Re-enter password" />
+            {errorText.password && < span className="self-center w-[450px] text-red-500 pl-1">{errorText.password}</span>}
+            <div className="text-white text-md leading-5 whitespace-nowrap justify-center bg-gray-600 self-center w-[450px] max-w-full mt-5 px-5 py-4 rounded-xl max-md:pl-2.5">
+                <input type="password" id="confirm-password" className="h-auto border-none focus:outline-none bg-gray-600 placeholder:text-white"
+                    placeholder="Re-enter password" onChange={() => setErrorText(prevErrorTxt => ({
+                        ...prevErrorTxt,
+                        password_confirm: null
+                    }))} />
             </div>
-            <Link to={"/login"}
+            {errorText.password_confirm && < span className="self-center w-[450px] text-red-500 pl-1">{errorText.password_confirm}</span>}
+            <button onClick={onSignUp}
                 className="h-12 text-white text-center text-xl  leading-5 capitalize whitespace-nowrap justify-center items-center shadow-sm bg-yellow-500 self-center w-[450px] max-w-full mt-5 px-5 py-4 mb-2 rounded-xl">
                 Sign up
-            </Link>
+            </button>
 
         </div >
     );
