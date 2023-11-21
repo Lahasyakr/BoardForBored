@@ -41,20 +41,19 @@ export default function AboutBFB(props) {
                                 Welcome to Board For Bored, where our passion for board games meets the joy of play! We're more than
                                 just a board game rental service; we're enthusiasts dedicated to fostering a vibrant community of gamers.
                             </p>
-                            <p className="text-gray-500 dark:text-gray-400">
+                            <p className="text-gray-500 dark:text-gray-400 mb-6">
 
                                 <strong className="font-semibold text-gray-900 dark:text-white">Our Story </strong>- Board For Bored was born out of a shared love for board games and the desire to make these experiences
                                 accessible to everyone. As avid gamers ourselves, we understand the thrill of discovering new games and the camaraderie that comes with each play session.
                             </p>
+                            <p className="text-gray-500 dark:text-gray-400 mb-6">
+                                <strong className="font-semibold text-gray-900 dark:text-white">Our Mission </strong>- At Board For Bored, our mission is simple: to bring people together through the joy of board games.
+                                We believe that every gathering, whether with family or friends, can be elevated by the right game. Our extensive collection is curated to cater to all tastes and preferences, ensuring there's something for everyone.
+                            </p>
                         </div>
                     </div>
                     <div className="px-6">
-                        <p className="text-gray-500 dark:text-gray-400 pt-12 mb-6">
-                            <strong className="font-semibold text-gray-900 dark:text-white">Our Mission </strong>- At Board For Bored, our mission is simple: to bring people together through the joy of board games.
-                            We believe that every gathering, whether with family or friends, can be elevated by the right game. Our extensive collection is curated to cater to all tastes and preferences, ensuring there's something for everyone.
-                        </p>
-
-                        <p className="text-gray-500 dark:text-gray-400 ">
+                        <p className="text-gray-500 dark:text-gray-400 pt-0 md:pt-8">
                             <strong className="font-semibold text-gray-900 dark:text-white">What Sets Us Apart </strong>- </p>
 
                         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 mb-6">
