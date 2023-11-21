@@ -51,7 +51,7 @@ export default function OrderDetails(props) {
                             </span>
                         </div>
                     </div>
-                    <div className="checkout justify-between items-stretch bg-zinc-100 self-stretch flex gap-0 mt-4 px-1 rounded-xl">
+                    <div className="checkout justify-between items-stretch bg-transparent self-stretch flex gap-0 mt-4 px-1 rounded-xl">
                         <Select
                             placeholder="Select payment method"
                             style={{ width: '100%', height: "2.5rem" }}

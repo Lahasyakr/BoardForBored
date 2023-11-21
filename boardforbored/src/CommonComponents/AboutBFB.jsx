@@ -1,7 +1,9 @@
 import * as React from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 
 export default function AboutBFB(props) {
+    const navigate= useNavigate();
     return (
         <>
 
@@ -9,7 +11,7 @@ export default function AboutBFB(props) {
                 <div className="justify-center flex-1 max-w-6xl py-4 mx-auto lg:py-6 md:px-6">
                     <div className="flex flex-wrap ">
                         <div className="w-full px-4 mb-10 lg:w-1/2 lg:mb-0">
-                            <h1 className="text-yellow-500 text-3xl font-semibold md:text-5xl">Board For Bored</h1>
+                            <h1 className="text-yellow-500 text-3xl font-semibold md:text-5xl"><button onClick={()=>navigate(-1)}> Board For Bored</button></h1>
                             <div className="relative lg:max-w-md">
                                 <img srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/84b5daf5-5d35-4931-b5d8-ed8621e8ff21?apiKey=361c4900d91b476aba2cbfc84558ec7f&width=100 100w,
                                  https://cdn.builder.io/api/v1/image/assets/TEMP/84b5daf5-5d35-4931-b5d8-ed8621e8ff21?apiKey=361c4900d91b476aba2cbfc84558ec7f&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/84b5daf5-5d35-4931-b5d8-ed8621e8ff21?apiKey=361c4900d91b476aba2cbfc84558ec7f&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/84b5daf5-5d35-4931-b5d8-ed8621e8ff21?apiKey=361c4900d91b476aba2cbfc84558ec7f&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/84b5daf5-5d35-4931-b5d8-ed8621e8ff21?apiKey=361c4900d91b476aba2cbfc84558ec7f&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/84b5daf5-5d35-4931-b5d8-ed8621e8ff21?apiKey=361c4900d91b476aba2cbfc84558ec7f&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/84b5daf5-5d35-4931-b5d8-ed8621e8ff21?apiKey=361c4900d91b476aba2cbfc84558ec7f&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/84b5daf5-5d35-4931-b5d8-ed8621e8ff21?apiKey=361c4900d91b476aba2cbfc84558ec7f&"
