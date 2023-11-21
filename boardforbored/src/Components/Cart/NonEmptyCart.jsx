@@ -1,11 +1,11 @@
 import * as React from "react";
 import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { removeFromCart } from "../../redux/actions";
 
 export default function NonEmptyCart(props) {
     const dispatch = useDispatch();
-
+    const navigate = useNavigate();
     const subTotal = () => {
         let total = 0;
         props.cartItems.map((item) => {
@@ -37,7 +37,7 @@ export default function NonEmptyCart(props) {
                                                 {item.game.name}
                                             </h3>
                                             <button onClick={() => {
-                                                dispatch(removeFromCart(item.game.id))
+                                                dispatch(removeFromCart(key))
                                             }}><img
                                                     loading="lazy"
                                                     src="https://cdn.builder.io/api/v1/image/assets/TEMP/7e6bf23f-43f7-43a9-b9af-8eb4fc1ac5d4?apiKey=361c4900d91b476aba2cbfc84558ec7f&"
@@ -62,11 +62,11 @@ export default function NonEmptyCart(props) {
                         )
                     })}
                 </section>
-                <div className="bg-gray-600 self-stretch w-[2px] shrink-0 h-[576px]" />
+                <div className="bg-gray-600 self-stretch w-[2px] shrink-0 h-auto sm:hidden md:block" />
                 <section className="flex basis-[30%] flex-col items-stretch mt-24 max-md:mt-10">
                     <div className="flex items-stretch justify-between gap-5">
                         <h2 className="justify-center text-gray-600 text-opacity-90 text-center text-3xl font-bold leading-8">
-                            Total
+                            Order Total
                         </h2>
                         <div className="justify-center text-gray-600 text-opacity-90 text-center text-3xl font-bold leading-8">
                             ${subTotal()}
@@ -74,9 +74,12 @@ export default function NonEmptyCart(props) {
                     </div>
                     <div className="text-white text-center text-3xl leading-5 capitalize whitespace-nowrap justify-center items-stretch
                      shadow-sm bg-yellow-500 mt-12 px-4 py-4 rounded-xl max-md:pr-0 max-md:mt-8">
-                        <a href="..." className="block w-full h-full font-200">
+                        <button className="block w-full h-full font-200"
+                            onClick={() => {
+                                navigate('/checkout', { state: { total: subTotal() } })
+                            }}>
                             Proceed to Checkout
-                        </a>
+                        </button>
                     </div>
                 </section>
             </div>

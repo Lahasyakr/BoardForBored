@@ -43,7 +43,7 @@ export default function Header() {
                 <Link to='/dashboard'><HomeFilled style={{ color: "white", fontSize: "2rem" }} /></Link>
               </div>
               <h1 className="justify-center text-white text-center text-xl self-center my-auto">
-                About
+                <Link to='/about'>About</Link>
               </h1>
 
               <div className="items-stretch flex w-[460px] self-center flex grow basis-[0%] flex-col my-auto max-md:max-w-full">

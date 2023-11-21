@@ -8,6 +8,8 @@ export default function OrderDetails(props) {
     const location = useLocation();
     const navigate = useNavigate();
     const total = location.state.total;
+    const [paymentMethod, setPaymentMethod] = React.useState(null);
+    const [errorText, setErrorText] = React.useState(null)
     return (
 
         <>
@@ -37,15 +39,15 @@ export default function OrderDetails(props) {
                                 Order total:{" "}
                             </h2>
                         </div>
-                        <div className="flex basis-[15%] flex-col items-stretch">
+                        <div className="flex basis-[25%] flex-col items-stretch">
                             <span className="justify-center text-gray-600 text-opacity-90 text-2xl leading-6">
                                 $ {total}
                             </span>
                             <span className="justify-center text-gray-600 text-opacity-90 text-2xl leading-6 mt-5">
-                                $ 0
+                                $ {(total * 7) / 100}
                             </span>
                             <span className="justify-center text-black text-opacity-90 text-2xl leading-6 mt-5">
-                                $ {total}
+                                $ {total + (total * 7) / 100}
                             </span>
                         </div>
                     </div>
@@ -53,7 +55,12 @@ export default function OrderDetails(props) {
                         <Select
                             placeholder="Select payment method"
                             style={{ width: '100%', height: "2.5rem" }}
-                            onChange={()=>{console.log("safd")}}
+                            onChange={(value) => {
+                                if (value) {
+                                    setPaymentMethod(value)
+                                    setErrorText(null)
+                                }
+                            }}
                             options={[
                                 { value: 1, label: 'Debit Card' },
                                 { value: 0, label: 'Credit Card' }
@@ -69,7 +76,15 @@ export default function OrderDetails(props) {
                             alt="Payment Method"
                         /> */}
                     </div>
-                    <button className="text-white text-center text-3xl leading-5 capitalize whitespace-nowrap justify-center 
+                    {errorText && < span className="justify-between w-[450px] text-red-500 pl-1">{errorText}</span>}
+                    <button onClick={() => {
+                        if (paymentMethod) {
+                            navigate('/carddetails')
+                        } else {
+                            setErrorText("Please choose payment method")
+                        }
+                    }}
+                        className="text-white text-center text-3xl leading-5 capitalize whitespace-nowrap justify-center 
                     items-stretch shadow-sm bg-yellow-500 w-[161px] max-w-full mt-10 px-5 py-3.5 rounded-xl max-md:mt-10 max-md:pl-px">
                         Proceed
                     </button>

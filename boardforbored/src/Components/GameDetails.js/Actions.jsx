@@ -45,10 +45,8 @@ export default function Actions(props) {
     };
 
     const onAddToCart = () => {
-        console.log(cartItems)
-        if (cartItems?.length === 0) {
-            dispatch(addToCart({ game: gameItem, days: days, quantity: quantity }))
-        }
+        dispatch(addToCart({ game: gameItem, days: days, quantity: quantity }))
+
     }
     return (
         <>
@@ -83,11 +81,16 @@ export default function Actions(props) {
 
                         <div className="items-stretch flex w-full max-w-full px-5 flex-col mt-6 rounded-3xl self-end">
                             <button
-                                onClick={onAddToCart}
+                                onClick={() => {
+                                    onAddToCart()
+                                    navigate('/cart')
+
+                                }
+                                }
                                 disabled={days == 0 || quantity == 0}
                                 className="text-gray-600 text-xl font-bold leading-6 w-[90%] whitespace-nowrap bg-yellow-300 items-center px-5 py-3.5 rounded-3xl disabled:opacity-50"
                             >
-                                {cartItems?.length > 0 ? `Proceed to Checkout` : `Add to cart`}
+                                {/* {cartItems?.length > 0 ? `Proceed to Checkout` : */} Add to cart
                             </button>
                         </div>
                         <div className="items-stretch flex w-full max-w-full px-5 flex-col mt-5 mb-2.5 self-end">

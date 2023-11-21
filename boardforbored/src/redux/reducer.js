@@ -9,7 +9,7 @@ const cartreducer = (state = INITIAL_STATE, action) => {
         case 'ADD_CART':
             return { ...state, cartItems: [...state.cartItems, action.newItem] };
         case 'REMOVE_FROM_CART':
-            return { ...state, cartItems: state.cartItems.filter((item, index) => item.game.id !== action.id) }
+            return { ...state, cartItems: state.cartItems.filter((item, index) => index !== action.index) }
         default: return state;
     }
 

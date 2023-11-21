@@ -9,12 +9,15 @@ import Dashboard from './Components/Dashboard/Dashboard';
 import SelectedGame from './Components/GameDetails.js/SelectedGame';
 import Cart from './Components/Cart/cart';
 import OrderDetails from './Components/Checkout/OrderDetails';
+import CardDetails from './Components/Checkout/CardDetails';
+import PaymentSuccess from './Components/Checkout/PaymentSuccess';
+import AboutBFB from './CommonComponents/AboutBFB';
 
 class App extends Component {
   render() {
     return (
       <HashRouter basename="/">
-        <div>
+        <div className='max-h-full'>
           <Routes>
             <Route exact path='/' Component={LanadingPage} />
             <Route path='signUp' Component={SignUpPage} />
@@ -23,9 +26,13 @@ class App extends Component {
             <Route path='selected' Component={SelectedGame} />
             <Route path='cart' Component={Cart} />
             <Route path='checkout' Component={OrderDetails} />
+            <Route path='carddetails' Component={CardDetails} />
+            <Route path='orderplaced' Component={PaymentSuccess} />
+            <Route path='about' Component={AboutBFB} />
           </Routes>
+          <Footer />
         </div>
-        <Footer />
+        
       </HashRouter>
     );
   }

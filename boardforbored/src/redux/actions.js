@@ -5,10 +5,10 @@
     };
 };
 
-export const removeFromCart = (id) => {
+export const removeFromCart = (index) => {
     return {
         type: 'REMOVE_FROM_CART',
-        id: id
+        index: index
     };
 };
 

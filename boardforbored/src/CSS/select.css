@@ -91,3 +91,39 @@
     border-color: transparent;
     box-shadow: none;
 }
+
+/*carddetails select */
+
+.carddetails .ant-select-selection-placeholder {
+    color: white;
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+.carddetails .ant-select-selector {
+    border-radius: 10px;
+    border: none;
+    font-size: large;
+    background-color: rgb(75 85 99 / var(--tw-bg-opacity));
+}
+
+.carddetails .ant-select-selection-item {
+    color: white;
+}
+.carddetails .ant-select-arrow{
+    color: white;
+}
+
+.carddetails :where(.css-dev-only-do-not-override-1adbn6x).ant-select:not(.ant-select-customize-input) .ant-select-selector {
+    border: none;
+    background-color: rgb(75 85 99 / var(--tw-bg-opacity));
+}
+
+.carddetails :where(.css-dev-only-do-not-override-1adbn6x).ant-select:not(.ant-select-disabled):not(.ant-select-customize-input):not(.ant-pagination-size-changer):hover .ant-select-selector {
+    border-color: rgb(75 85 99 / var(--tw-bg-opacity));
+}
+
+.carddetails .ant-select-focused:where(.css-dev-only-do-not-override-1adbn6x).ant-select:not(.ant-select-disabled):not(.ant-select-customize-input):not(.ant-pagination-size-changer) .ant-select-selector {
+    border-color: rgb(75 85 99 / var(--tw-bg-opacity));
+    box-shadow: none;
+}
