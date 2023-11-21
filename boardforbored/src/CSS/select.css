@@ -1,129 +1,129 @@
 .actions .ant-select-selection-placeholder {
-    color: #4D4E62;
-    font-size: large;
+    color: #4D4E62 !important;
+    font-size: large !important;
 }
 
 .actions .ant-select-selector {
-    border-radius: 30px;
-    font-size: large;
+    border-radius: 30px !important;
+    font-size: large !important;
 }
 
 .actions :where(.css-dev-only-do-not-override-1adbn6x).ant-select:not(.ant-select-disabled):not(.ant-select-customize-input):not(.ant-pagination-size-changer):hover .ant-select-selector {
-    border-color: gray;
+    border-color: gray  !important;
 }
 
 .actions .ant-select-focused:where(.css-dev-only-do-not-override-1adbn6x).ant-select:not(.ant-select-disabled):not(.ant-select-customize-input):not(.ant-pagination-size-changer) .ant-select-selector {
-    border-color: gray;
-    box-shadow: none;
+    border-color: gray !important;
+    box-shadow: none !important;
 }
 
 
 /* range picker*/
 
 .actions .ant-picker {
-    border-radius: 30px;
+    border-radius: 30px !important;
 }
 
 .actions .ant-picker-input input::placeholder {
-    color: #4D4E62;
+    color: #4D4E62 !important;
 }
 
-:where(.css-dev-only-do-not-override-1adbn6x).ant-picker .ant-picker-input>input {
-    font-size: large;
-    color: #4D4E62;
+.actions :where(.css-dev-only-do-not-override-1adbn6x).ant-picker .ant-picker-input>input {
+    font-size: large !important;
+    color: #4D4E62 !important;
 }
 
-:where(.css-dev-only-do-not-override-1adbn6x).ant-picker:hover {
-    border-color: gray;
+.actions :where(.css-dev-only-do-not-override-1adbn6x).ant-picker:hover {
+    border-color: gray!important;
 }
 
-:where(.css-dev-only-do-not-override-1adbn6x).ant-picker-focused.ant-picker {
-    border-color: gray;
-    box-shadow: none;
+.actions :where(.css-dev-only-do-not-override-1adbn6x).ant-picker-focused.ant-picker {
+    border-color: gray!important;
+    box-shadow: none!important;
 }
 
-:where(.css-dev-only-do-not-override-1adbn6x).ant-picker-range .ant-picker-active-bar {
-    background: none;
+.actions :where(.css-dev-only-do-not-override-1adbn6x).ant-picker-range .ant-picker-active-bar {
+    background: none!important;
 }
 
-:where(.css-dev-only-do-not-override-1adbn6x).ant-picker-dropdown .ant-picker-cell-in-view.ant-picker-cell-selected .ant-picker-cell-inner,
-:where(.css-dev-only-do-not-override-1adbn6x).ant-picker-dropdown .ant-picker-cell-in-view.ant-picker-cell-range-start .ant-picker-cell-inner,
-:where(.css-dev-only-do-not-override-1adbn6x).ant-picker-dropdown .ant-picker-cell-in-view.ant-picker-cell-range-end .ant-picker-cell-inner {
-    background-color: gray;
-    border-color: 1px solid #FDD836;
+.actions :where(.css-dev-only-do-not-override-1adbn6x).ant-picker-dropdown .ant-picker-cell-in-view.ant-picker-cell-selected .ant-picker-cell-inner,
+.actions :where(.css-dev-only-do-not-override-1adbn6x).ant-picker-dropdown .ant-picker-cell-in-view.ant-picker-cell-range-start .ant-picker-cell-inner,
+.actions :where(.css-dev-only-do-not-override-1adbn6x).ant-picker-dropdown .ant-picker-cell-in-view.ant-picker-cell-range-end .ant-picker-cell-inner {
+    background-color: gray!important;
+    border-color: 1px solid #FDD836!important;
 }
 
 .actions .ant-picker-cell .ant-picker-cell-in-view .ant-picker-cell-range-end {
-    border-color: 1px solid #FDD836;
+    border-color: 1px solid #FDD836!important;
 }
 
-:where(.css-dev-only-do-not-override-1adbn6x).ant-picker {
-    font-size: large;
+.actions :where(.css-dev-only-do-not-override-1adbn6x).ant-picker {
+    font-size: large!important;
 }
 
 
 /*checkout select*/
 .checkout .ant-select-selection-placeholder {
-    color: #4D4E62;
-    font-size: large;
+    color: #4D4E62!important;
+    font-size: large!important;
 }
 
 .checkout .ant-select-selector {
-    border-radius: 10px;
-    border: none;
-    font-size: large;
+    border-radius: 10px!important;
+    border: none!important;
+    font-size: large!important;
 }
 
 .checkout .ant-select-selection-item {
-    color: #4D4E62;
+    color: #4D4E62!important;
 }
 
 .checkout :where(.css-dev-only-do-not-override-1adbn6x).ant-select:not(.ant-select-customize-input) .ant-select-selector {
-    border: none;
-    background-color: transparent;
+    border: none!important;
+    background-color: transparent!important;
 }
 
 .checkout :where(.css-dev-only-do-not-override-1adbn6x).ant-select:not(.ant-select-disabled):not(.ant-select-customize-input):not(.ant-pagination-size-changer):hover .ant-select-selector {
-    border-color: transparent;
+    border-color: transparent!important;
 }
 
 .checkout .ant-select-focused:where(.css-dev-only-do-not-override-1adbn6x).ant-select:not(.ant-select-disabled):not(.ant-select-customize-input):not(.ant-pagination-size-changer) .ant-select-selector {
-    border-color: transparent;
-    box-shadow: none;
+    border-color: transparent!important;
+    box-shadow: none!important;
 }
 
 /*carddetails select */
 
 .carddetails .ant-select-selection-placeholder {
-    color: white;
-    font-size: 1rem;
-    line-height: 1.5rem;
+    color: white!important;
+    font-size: 1rem!important;
+    line-height: 1.5rem!important;
 }
 
 .carddetails .ant-select-selector {
-    border-radius: 10px;
-    border: none;
-    font-size: large;
-    background-color: rgb(75 85 99 / var(--tw-bg-opacity));
+    border-radius: 10px!important;
+    border: none!important;
+    font-size: large!important;
+    background-color: rgb(75 85 99 / var(--tw-bg-opacity))!important;
 }
 
 .carddetails .ant-select-selection-item {
-    color: white;
+    color: white!important;
 }
 .carddetails .ant-select-arrow{
-    color: white;
+    color: white!important;
 }
 
 .carddetails :where(.css-dev-only-do-not-override-1adbn6x).ant-select:not(.ant-select-customize-input) .ant-select-selector {
-    border: none;
-    background-color: rgb(75 85 99 / var(--tw-bg-opacity));
+    border: none!important;
+    background-color: rgb(75 85 99 / var(--tw-bg-opacity))!important;
 }
 
 .carddetails :where(.css-dev-only-do-not-override-1adbn6x).ant-select:not(.ant-select-disabled):not(.ant-select-customize-input):not(.ant-pagination-size-changer):hover .ant-select-selector {
-    border-color: rgb(75 85 99 / var(--tw-bg-opacity));
+    border-color: rgb(75 85 99 / var(--tw-bg-opacity))!important;
 }
 
 .carddetails .ant-select-focused:where(.css-dev-only-do-not-override-1adbn6x).ant-select:not(.ant-select-disabled):not(.ant-select-customize-input):not(.ant-pagination-size-changer) .ant-select-selector {
-    border-color: rgb(75 85 99 / var(--tw-bg-opacity));
-    box-shadow: none;
+    border-color: rgb(75 85 99 / var(--tw-bg-opacity))!important;
+    box-shadow: none!important;
 }

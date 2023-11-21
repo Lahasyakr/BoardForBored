@@ -62,8 +62,8 @@ export default function OrderDetails(props) {
                                 }
                             }}
                             options={[
-                                { value: 1, label: 'Debit Card' },
-                                { value: 0, label: 'Credit Card' }
+                                { value: "debit", label: 'Debit Card' },
+                                { value: "credit", label: 'Credit Card' }
                             ]}
                         />
                         {/* <span className="text-gray-600 text-2xl leading-6 grow shrink basis-auto">
