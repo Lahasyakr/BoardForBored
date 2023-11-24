@@ -14,6 +14,7 @@ import PaymentSuccess from './Components/Checkout/PaymentSuccess';
 import AboutBFB from './CommonComponents/AboutBFB';
 import UserInfo from './Components/UserManagement/UserInfo';
 import ManageProfile from './Components/UserManagement/ManageProfile';
+import MyOrders from './Components/UserManagement/MyOrders';
 
 class App extends Component {
   render() {
@@ -33,6 +34,7 @@ class App extends Component {
             <Route path='about' Component={AboutBFB} />
             <Route path='userinfo' Component={UserInfo} />
             <Route path='manageprofile' Component={ManageProfile}/>
+            <Route path='myorders' Component={MyOrders}/>
           </Routes>
           <Footer />
         </div>

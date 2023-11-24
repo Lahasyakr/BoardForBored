@@ -58,8 +58,8 @@ export default function ManageProfile(props) {
                             className="aspect-[8.46] object-contain object-center w-[220px] overflow-hidden"
                         /></button>
 
-                        <div className="flex flex-col items-center w-[40%] py-10
-                        mt-4 self-end max-md:ml-2.5 max-md:mt-10 max-md:px-5 bg-gray-300 rounded-3xl dark:bg-gray-300">
+                        <div className="flex flex-col items-center w-[40%] py-2 lg:py-10
+                        mt-4 self-center lg:self-end max-md:ml-2.5 max-md:mt-10 max-md:px-5 bg-gray-300 rounded-3xl dark:bg-gray-300">
                             <UserOutlined style={{ color: "white", fontSize: "5rem" }} />
                         </div>
 
