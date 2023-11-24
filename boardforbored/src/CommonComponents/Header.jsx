@@ -17,7 +17,7 @@ export default function Header() {
   const handleSearch = () => {
     messageApi.open({
       type: 'warning',
-      className: 'ms-3 text-sm font-medium border-yellow-500',
+      className: 'ms-3 text-sm font-semibold border-yellow-500',
       content: 'No Search Found',
     });
   }
@@ -69,12 +69,12 @@ export default function Header() {
                 className="aspect-square object-contain object-center w-[50px] overflow-hidden shrink-0 max-w-full mt-1 self-start "
                 alt="Logo"
               /></Link></Badge>
-              <img
+              <Link to={'/userinfo'}><img
                 loading="lazy"
                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/9372e1a6-4861-4384-ab26-412f0de1c39d?apiKey=361c4900d91b476aba2cbfc84558ec7f&"
                 className="aspect-square object-contain object-center w-[50px] overflow-hidden shrink-0 max-w-full mt-1 self-start"
                 alt="Image"
-              />
+              /></Link>
             </div>
           </div>
         </nav>
