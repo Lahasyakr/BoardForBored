@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export default function LandingPage(props) {
   return (
     <>
-      <Header />
+      <Header isFull={false}/>
       <div className="font-serif flex flex-col">
         <section className="self-stretch w-full px-5 pr-9 pl-9 md:pl-28 max-md:max-w-full max-md:pr-5">
           <div className="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">

@@ -5,7 +5,8 @@ import { message, Badge } from 'antd';
 import { HomeFilled } from '@ant-design/icons';
 import { Link } from "react-router-dom";
 
-export default function Header() {
+export default function Header(props) {
+  const isFull = props?.isFull == false ? props.isFull : true;
   const [search, setSearch] = useState("");
   const [messageApi, contextHolder] = message.useMessage();
   const cartItems = useSelector((o) => o.cartreducer.cartItems);
@@ -39,14 +40,14 @@ export default function Header() {
                 className="aspect-[1.54] object-contain object-center w-[60px] overflow-hidden shrink-0 max-w-full"
                 alt="Logo"
               />
-              <div className="justify-center text-white text-center text-2xl self-center my-auto pb-1">
+              {isFull && <div className="justify-center text-white text-center text-2xl self-center my-auto pb-1">
                 <Link to='/dashboard'><HomeFilled style={{ color: "white", fontSize: "2rem" }} /></Link>
-              </div>
+              </div>}
               <h1 className="justify-center text-white text-center text-xl self-center my-auto">
                 <Link to='/about'>About</Link>
               </h1>
 
-              <div className="items-stretch flex w-[460px] self-center flex grow basis-[0%] flex-col my-auto max-md:max-w-full">
+              {isFull && <div className="items-stretch flex w-[460px] self-center flex grow basis-[0%] flex-col my-auto max-md:max-w-full">
                 <div className="bg-white flex flex-col items-stretch px-4 py-1 rounded-[50px] max-md:max-w-full">
                   <div className="items-stretch flex justify-between gap-5 -mr-2.5 max-md:max-w-full max-md:flex-wrap">
                     <h2 className="justify-center text-gray-600 text-opacity-80 text-center text-2xl pt-0">
@@ -61,8 +62,9 @@ export default function Header() {
                   </div>
                 </div>
               </div>
+              }
             </div>
-            <div className="items-stretch flex max-w-full justify-right gap-5 max-md:max-w-full max-md:flex-wrap max-md:justify-right sm:justify-right">
+            {isFull && <div className="items-stretch flex max-w-full justify-right gap-5 max-md:max-w-full max-md:flex-wrap max-md:justify-right sm:justify-right">
               <Badge count={cartItems?.length} color="#FAB005" style={{ marginTop: "10px" }}><Link to='/cart'><img
                 loading="lazy"
                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/7a32db31-062f-4222-93b9-39ebf3e37605?apiKey=361c4900d91b476aba2cbfc84558ec7f&"
@@ -76,6 +78,8 @@ export default function Header() {
                 alt="Image"
               /></Link>
             </div>
+            }
+
           </div>
         </nav>
         <div className="bg-yellow-500 bg-opacity-50 flex min-h-[15px] w-full flex-col max-md:max-w-full" />
