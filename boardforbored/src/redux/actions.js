@@ -12,10 +12,23 @@ export const removeFromCart = (index) => {
     };
 };
 
+export const emptyCart = () => {
+    return {
+        type: 'EMPTY_CART'
+    };
+};
+
 export const saveUser = (user) => {
     return {
         type: 'SAVE_USER',
         user: user
+    }
+}
+
+export const addMyOrder = (orders) => {
+    return {
+        type: 'ADD_ORDER',
+        orders: orders
     }
 }
 

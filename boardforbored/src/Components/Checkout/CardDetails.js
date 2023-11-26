@@ -1,10 +1,14 @@
 import * as React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Header from "../../CommonComponents/Header";
 import { Select } from "antd";
+import { useDispatch } from "react-redux";
+import { addMyOrder, emptyCart } from "../../redux/actions";
 
 export default function CardDetails(props) {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const location = useLocation();
     const [year, setYear] = React.useState(null);
     const [month, setMonth] = React.useState(null);
     const [errorTxt, setErrorText] = React.useState({
@@ -122,6 +126,10 @@ export default function CardDetails(props) {
         if (!validateCvv()) flag = false;
         if (!validateZipCode()) flag = false;
         if (flag) {
+            dispatch(addMyOrder(location.state.itemObj))
+            if (location?.state?.emptyCart) {
+                dispatch(emptyCart())
+            }
             navigate('/orderplaced')
         } else {
             return null;
@@ -155,14 +163,14 @@ export default function CardDetails(props) {
 
                     <input type="text" id="name" className="h-4 border-none focus:outline-none bg-gray-600 placeholder:text-white placeholder:text-base
                         text-white text-xl leading-5 whitespace-nowrap justify-center bg-gray-600 self-center w-[450px] max-w-full mt-5 px-5 py-6 rounded-xl max-md:pl-2.5"
-                        placeholder="Name on card" onChange={(e)=>{
-                            if(e.target.value){
+                        placeholder="Name on card" onChange={(e) => {
+                            if (e.target.value) {
                                 setErrorText(prevErrorTxt => ({
                                     ...prevErrorTxt,
                                     name: null
                                 }))
                             }
-                        }}/>
+                        }} />
                     {errorTxt.name && < span className="self-center w-[450px] text-red-500 pl-1">{errorTxt.name}</span>}
 
                     <div className="carddetails flex items-stretch gap-2 text-white text-xl leading-5 whitespace-nowrap justify-center self-center w-[450px] max-w-full mt-5 rounded-xl max-md:pl-2.5">

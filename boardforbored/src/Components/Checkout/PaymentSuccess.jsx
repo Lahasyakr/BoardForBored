@@ -1,12 +1,11 @@
 import * as React from "react";
-import { useSelector } from 'react-redux';
 import Header from "../../CommonComponents/Header";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 export default function PaymentSuccess(props) {
-    const cartItems = useSelector((o) => o.cartreducer.cartItems);
     const navigate = useNavigate();
+
     return (
         <>
             <Header />
@@ -29,7 +28,9 @@ export default function PaymentSuccess(props) {
                         src="https://cdn.builder.io/api/v1/image/assets/TEMP/73cab63e-786c-439e-b96f-db71d549c29c?apiKey=361c4900d91b476aba2cbfc84558ec7f&"
                         className="aspect-[1.05] object-contain object-center w-11 fill-green-800 overflow-hidden max-w-full mt-4"
                     />
-                    <button onClick={() => navigate('/dashboard')}
+                    <button onClick={() => {
+                        navigate('/dashboard')
+                    }}
                         className="text-white text-center text-3xl leading-5 capitalize whitespace-nowrap justify-center 
                         items-stretch shadow-sm bg-gray-600 w-[87px] max-w-full mt-16 px-4 py-2 rounded-xl self-end 
                         max-md:pr-0 max-md:mt-10">

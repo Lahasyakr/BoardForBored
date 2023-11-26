@@ -5,7 +5,7 @@ export default function Footer() {
   return (
 
 
-    <footer className="sticky md:fixed bottom-0 left-0 z-20 w-full p-4 overflow-hidden shadow md:flex md:items-center md:justify-between md:p-6 items-stretch">
+    <footer className="fixed md:fixed bottom-0 left-0 z-20 w-full p-4 overflow-hidden shadow md:flex md:items-center md:justify-between md:p-6 items-stretch">
 
       <img
         loading="lazy"

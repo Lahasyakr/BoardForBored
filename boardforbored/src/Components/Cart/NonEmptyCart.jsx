@@ -76,7 +76,7 @@ export default function NonEmptyCart(props) {
                      shadow-sm bg-yellow-500 mt-12 px-4 py-4 rounded-xl max-md:pr-0 max-md:mt-8">
                         <button className="block w-full h-full font-200"
                             onClick={() => {
-                                navigate('/checkout', { state: { total: subTotal() } })
+                                navigate('/checkout', { state: { total: subTotal(), itemObj: props.cartItems, emptyCart:true } })
                             }}>
                             Proceed to Checkout
                         </button>

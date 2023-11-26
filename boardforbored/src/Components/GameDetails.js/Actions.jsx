@@ -22,9 +22,10 @@ export default function Actions(props) {
     let gameItem = gamedetails[props.id - 1];
     const [quantity, setQuantity] = React.useState(0);
     const [days, setDays] = React.useState([]);
+    const [toDate, setToDate] = React.useState(null);
+    const [fromDate, setFromDate] = React.useState(null);
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const cartItems = useSelector((o) => o.cartreducer.cartItems);
 
     const arrayToOptions = (number) => {
         let option = [];
@@ -36,6 +37,9 @@ export default function Actions(props) {
     }
     const onDateChange = (date, dateString) => {
         if (date) {
+            setToDate(dayjs(date[0]).format('MMM D, YYYY'));
+          
+            setFromDate(dayjs(date[1]).format('MMM D, YYYY'));
             let hours = date[1].diff(date[0], 'hours');
             let no_days = Math.floor(hours / 24);
             setDays(no_days);
@@ -45,7 +49,8 @@ export default function Actions(props) {
     };
 
     const onAddToCart = () => {
-        dispatch(addToCart({ game: gameItem, days: days, quantity: quantity }))
+        let itemObj ={ game: gameItem, days: days, quantity: quantity, toDate: toDate, fromDate: fromDate };
+        dispatch(addToCart(itemObj))
 
     }
     return (
@@ -96,7 +101,7 @@ export default function Actions(props) {
                         <div className="items-stretch flex w-full max-w-full px-5 flex-col mt-5 mb-2.5 self-end">
                             <button
                                 type="submit"
-                                onClick={() => navigate('/checkout', { state: { total: (gameItem.price * days) * quantity } })}
+                                onClick={() => navigate('/checkout', { state: { total: (gameItem.price * days) * quantity , itemObj:[{ game: gameItem, days: days, quantity: quantity, toDate: toDate, fromDate: fromDate }] }, emptyCart:false })}
                                 disabled={days == 0 || quantity == 0}
                                 className="text-gray-600 text-xl font-bold leading-6 w-[90%] whitespace-nowrap bg-yellow-500 items-center px-5 py-3.5 rounded-3xl disabled:opacity-50"
                             >

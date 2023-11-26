@@ -8,6 +8,7 @@ export default function OrderDetails(props) {
     const location = useLocation();
     const navigate = useNavigate();
     const total = location.state.total;
+    const itemObj = location.state.itemObj;
     const [paymentMethod, setPaymentMethod] = React.useState(null);
     const [errorText, setErrorText] = React.useState(null)
     return (
@@ -79,7 +80,7 @@ export default function OrderDetails(props) {
                     {errorText && < span className="justify-between w-[450px] text-red-500 pl-1">{errorText}</span>}
                     <button onClick={() => {
                         if (paymentMethod) {
-                            navigate('/carddetails')
+                            navigate('/carddetails', { state: { itemObj: itemObj, emptyCart:location.state.emptyCart } })
                         } else {
                             setErrorText("Please choose payment method")
                         }
