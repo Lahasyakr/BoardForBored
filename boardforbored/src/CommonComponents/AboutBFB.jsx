@@ -3,15 +3,26 @@ import { Link, useNavigate } from "react-router-dom";
 
 
 export default function AboutBFB(props) {
-    const navigate= useNavigate();
+    const navigate = useNavigate();
     return (
         <>
 
             <section className="flex items-center h-[100%] bg-gray-10 font-poppins dark:bg-gray-100 py-10 overflow-auto">
                 <div className="justify-center flex-1 max-w-6xl py-4 mx-auto lg:py-6 md:px-6">
+
                     <div className="flex flex-wrap ">
                         <div className="w-full px-4 mb-10 lg:w-1/2 lg:mb-0">
-                            <h1 className="text-yellow-500 text-3xl font-semibold md:text-5xl"><button onClick={()=>navigate(-1)}> Board For Bored</button></h1>
+                            <div className="inline-flex gap-5">
+                                <Link to={navigate(-1)}><img
+                                    loading="lazy"
+                                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/dd97bff6-5462-40c3-9c7e-b3a59dde2325?apiKey=361c4900d91b476aba2cbfc84558ec7f&"
+                                    className="aspect-[1.85] object-contain object-center w-12 overflow-hidden max-w-full mt-2"
+                                /></Link>
+                                <span>
+                                    <h1 className="text-yellow-500 text-3xl font-semibold md:text-5xl"><button onClick={() => navigate(-1)}> Board For Bored</button></h1>
+                                </span>
+                            </div>
+
                             <div className="relative lg:max-w-md">
                                 <img srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/84b5daf5-5d35-4931-b5d8-ed8621e8ff21?apiKey=361c4900d91b476aba2cbfc84558ec7f&width=100 100w,
                                  https://cdn.builder.io/api/v1/image/assets/TEMP/84b5daf5-5d35-4931-b5d8-ed8621e8ff21?apiKey=361c4900d91b476aba2cbfc84558ec7f&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/84b5daf5-5d35-4931-b5d8-ed8621e8ff21?apiKey=361c4900d91b476aba2cbfc84558ec7f&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/84b5daf5-5d35-4931-b5d8-ed8621e8ff21?apiKey=361c4900d91b476aba2cbfc84558ec7f&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/84b5daf5-5d35-4931-b5d8-ed8621e8ff21?apiKey=361c4900d91b476aba2cbfc84558ec7f&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/84b5daf5-5d35-4931-b5d8-ed8621e8ff21?apiKey=361c4900d91b476aba2cbfc84558ec7f&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/84b5daf5-5d35-4931-b5d8-ed8621e8ff21?apiKey=361c4900d91b476aba2cbfc84558ec7f&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/84b5daf5-5d35-4931-b5d8-ed8621e8ff21?apiKey=361c4900d91b476aba2cbfc84558ec7f&"
