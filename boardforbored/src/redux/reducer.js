@@ -1,8 +1,12 @@
+import { gamedetails } from "../data/gamedata";
+
 const INITIAL_STATE = {
     cartItems: [],
     myOrders: [],
     customer: { name: "User1", lastname: "", userName: "user1", password: "password", email: 'user1@gmail.com', phNo: "" },
-    admin: { name: 'Admin1', lastname: "", userName: "admin1", password: "password", email: 'admin1@gmail.com', phNo: "" }
+    admin: { name: 'Admin1', lastname: "", userName: "admin1", password: "password", email: 'admin1@gmail.com', phNo: "" },
+    AdminGames: gamedetails,
+    AdminOrders: []
 };
 
 const cartreducer = (state = INITIAL_STATE, action) => {

@@ -1,5 +1,5 @@
 .actions .ant-select-selection-placeholder {
-    color: #4D4E62 !important;
+    color: rgb(55 65 81 / var(--tw-bg-opacity)) !important;
     font-size: large !important;
 }
 
@@ -17,6 +17,37 @@
     box-shadow: none !important;
 }
 
+/* update modal*/
+
+.updateModal .ant-select-selection-placeholder {
+    color: white !important;
+    font-size: small !important;
+    background-color: rgb(55 65 81 / var(--tw-bg-opacity)) !important;
+}
+.updateModal .ant-select-selection-item{
+    color: white !important;
+    font-size: small;
+}
+
+.updateModal .ant-select-selector {
+    border-radius: 10px !important;
+    font-size: small !important;
+    background-color: rgb(55 65 81 / var(--tw-bg-opacity)) !important;
+}
+
+.updateModal .ant-select:not(.ant-select-disabled):not(.ant-select-customize-input):not(.ant-pagination-size-changer):hover .ant-select-selector {
+    border-color: rgb(55 65 81 / var(--tw-bg-opacity))  !important;
+    background-color: rgb(55 65 81 / var(--tw-bg-opacity)) !important;
+}
+
+.updateModal .ant-select-focused.ant-select:not(.ant-select-disabled):not(.ant-select-customize-input):not(.ant-pagination-size-changer) .ant-select-selector {
+    border-color: rgb(55 65 81 / var(--tw-bg-opacity)) !important;
+    box-shadow: none !important;
+    background-color: rgb(55 65 81 / var(--tw-bg-opacity)) !important;
+}
+.updateModal .ant-select-arrow{
+    color: white !important
+}
 
 /* range picker*/
 
@@ -25,12 +56,12 @@
 }
 
 .actions .ant-picker-input input::placeholder {
-    color: #4D4E62 !important;
+    color: rgb(55 65 81 / var(--tw-bg-opacity)) !important;
 }
 
 .actions .ant-picker .ant-picker-input>input {
     font-size: large !important;
-    color: #4D4E62 !important;
+    color: rgb(55 65 81 / var(--tw-bg-opacity)) !important;
 }
 
 .actions .ant-picker:hover {
@@ -64,7 +95,7 @@
 
 /*checkout select*/
 .checkout .ant-select-selection-placeholder {
-    color: #4D4E62!important;
+    color: rgb(55 65 81 / var(--tw-bg-opacity))!important;
     font-size: large!important;
 }
 
@@ -76,7 +107,7 @@
 }
 
 .checkout .ant-select-selection-item {
-    color: #4D4E62!important;
+    color: rgb(55 65 81 / var(--tw-bg-opacity))!important;
 }
 
 .checkout :where(.css-dev-only-do-not-override-1adbn6x).ant-select:not(.ant-select-customize-input) .ant-select-selector {

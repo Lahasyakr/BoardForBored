@@ -5,6 +5,7 @@ export const gamedetails =
             name: "Jaipur",
             price: "3",
             quantity:4,
+            deatils:"",
             rating: {
                 global: 3,
                 individualRating: [
