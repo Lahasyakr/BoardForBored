@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 
 export default function Header(props) {
   const isFull = props?.isFull == false ? props.isFull : true;
+  const isAdmin = props?.isAdmin || false;
   const [search, setSearch] = useState("");
   const [messageApi, contextHolder] = message.useMessage();
   const cartItems = useSelector((o) => o.cartreducer.cartItems);
@@ -40,14 +41,14 @@ export default function Header(props) {
                 className="aspect-[1.54] object-contain object-center w-[60px] overflow-hidden shrink-0 max-w-full"
                 alt="Logo"
               />
-              {isFull && <div className="justify-center text-white text-center text-2xl self-center my-auto pb-1">
-                <Link to='/dashboard'><HomeFilled style={{ color: "white", fontSize: "2rem" }} /></Link>
+              {(isFull || isAdmin) && <div className="justify-center text-white text-center text-2xl self-center my-auto pb-1">
+                <Link to={isAdmin ? '/adminHome' : '/dashboard'}><HomeFilled style={{ color: "white", fontSize: "2rem" }} /></Link>
               </div>}
-              <h1 className="justify-center text-white text-center text-xl self-center my-auto">
+              {!isAdmin && <h1 className="justify-center text-white text-center text-xl self-center my-auto">
                 <Link to='/about'>About</Link>
-              </h1>
+              </h1>}
 
-              {isFull && <div className="items-stretch flex w-[460px] self-center flex grow basis-[0%] flex-col my-auto max-md:max-w-full">
+              {(isFull && !isAdmin) && <div className="items-stretch flex w-[460px] self-center flex grow basis-[0%] flex-col my-auto max-md:max-w-full">
                 <div className="bg-white flex flex-col items-stretch px-4 py-1 rounded-[50px] max-md:max-w-full">
                   <div className="items-stretch flex justify-between gap-5 -mr-2.5 max-md:max-w-full max-md:flex-wrap">
                     <h2 className="justify-center text-gray-600 text-opacity-80 text-center text-2xl pt-0">
@@ -65,25 +66,26 @@ export default function Header(props) {
               }
             </div>
             {isFull && <div className="items-stretch flex max-w-full justify-right gap-5 max-md:max-w-full max-md:flex-wrap max-md:justify-right sm:justify-right">
-              <Badge count={cartItems?.length} color="#FAB005" style={{ marginTop: "10px" }}><Link to='/cart'><img
+              {!isAdmin && <Badge count={cartItems?.length} color="#FAB005" style={{ marginTop: "10px" }}><Link to='/cart'><img
                 loading="lazy"
                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/7a32db31-062f-4222-93b9-39ebf3e37605?apiKey=361c4900d91b476aba2cbfc84558ec7f&"
                 className="aspect-square object-contain object-center w-[50px] overflow-hidden shrink-0 max-w-full mt-1 self-start "
                 alt="Logo"
-              /></Link></Badge>
-              <Link to={'/userinfo'}><img
+              /></Link></Badge>}
+              <Link to={'/userinfo'} state={{ isAdmin: isAdmin }} > <img
                 loading="lazy"
                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/9372e1a6-4861-4384-ab26-412f0de1c39d?apiKey=361c4900d91b476aba2cbfc84558ec7f&"
                 className="aspect-square object-contain object-center w-[50px] overflow-hidden shrink-0 max-w-full mt-1 self-start"
                 alt="Image"
-              /></Link>
+              />
+              </Link>
             </div>
             }
 
           </div>
-        </nav>
+        </nav >
         <div className="bg-yellow-500 bg-opacity-50 flex min-h-[15px] w-full flex-col max-md:max-w-full" />
-      </header>
+      </header >
     </>
   );
 }

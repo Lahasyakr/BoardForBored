@@ -2,14 +2,15 @@ import * as React from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { UserOutlined } from '@ant-design/icons';
 import Header from "../../CommonComponents/Header";
-import { useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { saveUser } from "../../redux/actions";
 import { message } from 'antd';
 
 export default function ManageProfile(props) {
-    const user = useSelector((o) => o.cartreducer.customer);
     const navigate = useNavigate();
+    const location = useLocation();
     const dispatch = useDispatch();
+    const user = useSelector((o) => location?.state?.isAdmin ? o.cartreducer.admin : o.cartreducer.customer);
     const [messageApi, contextHolder] = message.useMessage();
     const [newUser, setNewUser] = React.useState(user);
     const [errorText, setErrorText] = React.useState({ name: null, email: null, phNo: null, lastName: null });
@@ -28,7 +29,7 @@ export default function ManageProfile(props) {
             ...prevErrorTxt, newObj
         }))
         if (!errorText.name && !errorText.email && !errorText.phNo && !errorText.lastName) {
-            
+
             messageApi.open({
                 type: 'success',
                 className: 'ms-6 text-sm font-semibold text-gray-800',
@@ -48,15 +49,15 @@ export default function ManageProfile(props) {
     return (
         <>
             {contextHolder}
-            <Header />
+            <Header isAdmin={location?.state?.isAdmin} />
             <div className="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
                 <div className="flex flex-col items-stretch w-[29%] py-2 max-md:w-full max-md:ml-0">
                     <div className="flex flex-col items-center mt-5 max-md:mt-10">
-                        <button onClick={() => navigate(-1)}><img
+                        <Link to='/userinfo' state={{ isAdmin: location?.state?.isAdmin }}><img
                             loading="lazy"
                             src="https://cdn.builder.io/api/v1/image/assets/TEMP/9c5f00de-f3a4-4f3d-8a72-d49b5bb92cdb?apiKey=361c4900d91b476aba2cbfc84558ec7f&"
                             className="aspect-[8.46] object-contain object-center w-[220px] overflow-hidden"
-                        /></button>
+                        /></Link>
 
                         <div className="flex flex-col items-center w-[40%] py-2 lg:py-10
                         mt-4 self-center lg:self-end max-md:ml-2.5 max-md:mt-10 max-md:px-5 bg-gray-300 rounded-3xl dark:bg-gray-300">

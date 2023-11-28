@@ -1,15 +1,16 @@
 import * as React from "react";
 import { useSelector } from 'react-redux';
 import Header from "../../CommonComponents/Header";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export default function MyOrders(props) {
     const myOrders = useSelector((o) => o.cartreducer.myOrders);
+    const location = useLocation();
     return (
         <>
-            <Header />
+            <Header isAdmin={location?.state?.isAdmin}/>
             <div className="flex flex-col max-md:items-stretch px-2 lg:px-60 py-5">
-                <Link to='/userinfo'><img
+                <Link to='/userinfo' state={{ isAdmin: location?.state?.isAdmin }}><img
                     loading="lazy"
                     src="https://cdn.builder.io/api/v1/image/assets/TEMP/dd97bff6-5462-40c3-9c7e-b3a59dde2325?apiKey=361c4900d91b476aba2cbfc84558ec7f&"
                     className="aspect-[1.85] object-contain object-center w-12 overflow-hidden max-w-full"

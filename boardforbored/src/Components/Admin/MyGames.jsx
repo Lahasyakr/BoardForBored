@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { gamedetails } from "../../data/gamedata";
 import { PlusCircleOutlined } from '@ant-design/icons';
 import UpdateGameModal from "./UpdateGameModal";
+import Modal from "../../CommonComponents/Modal";
 
 export default function MyGames(props) {
     const AdminGames = useSelector((o) => o.cartreducer.AdminGames);
@@ -104,6 +105,24 @@ export default function MyGames(props) {
                 isUpdate={false}
                 gameItem={selectedItem}
             />}
+
+            {isDeleteOpen && <Modal
+                title="Delete game"
+                open={isDeleteOpen}
+                onSubmit={() => {
+                    alert("deleted");
+                    setIsDeleteOpen(false)
+                }}
+                onCancel={() => setIsDeleteOpen(false)}
+                okText={"Confirm"}
+                cancelText={"Cancel"}
+                centerButtons={true}
+            >
+                <div className="text-gray-600 text-opacity-90 text-center text-xl font-semibold leading-8 mt-5 max-md:max-w-full max-md:mt-10">
+                    <div className="text-center">Are you sure you want to delete </div>
+                    <div className="text-center">this game from your listings?</div>
+                </div>
+            </Modal>}
 
         </div>
     )

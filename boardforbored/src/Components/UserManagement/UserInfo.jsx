@@ -1,16 +1,17 @@
 import * as React from "react";
 import { useSelector } from 'react-redux';
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Header from "../../CommonComponents/Header";
 
 
 export default function UserInfo(props) {
     const cartItems = useSelector((o) => o.cartreducer.cartItems);
     const navigate = useNavigate();
+    const location = useLocation();
 
     return (
         <>
-            <Header />
+            <Header isAdmin={location?.state?.isAdmin} />
             <div>
                 <section className="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0 px-2 lg:px-40 py-2">
                     <div className="flex flex-col items-stretch w-[53%] max-md:w-full max-md:ml-0">
@@ -29,14 +30,14 @@ export default function UserInfo(props) {
                             <div className="mt-10 pr-0.5 max-md:max-w-full max-md:mt-10">
                                 <div className="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
                                     <div className="flex flex-col items-stretch w-5/12 max-md:w-full max-md:ml-0">
-                                        <button onClick={() => navigate('/manageprofile')}
+                                        <button onClick={() => navigate('/manageprofile', { state: { isAdmin: location?.state?.isAdmin } })}
                                             className="flex flex-grow text-gray-600 text-2xl leading-5 whitespace-nowrap justify-center items-stretch bg-gray-300
                                          bg-opacity-70 grow w-full mx-auto pt-20 pb-20 px-5 rounded-3xl max-md:mt-5 max-md:px-0.5">
                                             Manage Profile
                                         </button>
                                     </div>
                                     <div className="flex flex-col items-stretch w-5/12 ml-5 max-md:w-full max-md:ml-0">
-                                        <button onClick={() => navigate('/myorders')}
+                                        <button onClick={() => navigate('/myorders', { state: { isAdmin: location?.state?.isAdmin } })}
                                             className="flex text-gray-600 text-2xl leading-5 whitespace-nowrap justify-center items-center bg-gray-300 
                                         bg-opacity-70 grow w-full mx-auto pt-20 pb-20 px-5 rounded-3xl max-md:mt-5">
                                             My Orders

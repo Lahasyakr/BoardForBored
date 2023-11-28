@@ -4,7 +4,7 @@ export default function Modal({ ...props }) {
 
     return (
         <>{props.open} && <div aria-hidden="true" data-modal-backdrop="static" id="modal"
-        className="backdrop-blur-sm border-gray-500 overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 flex justify-center 
+            className="backdrop-blur-sm border-gray-500 overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 flex justify-center 
         items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
             <div className="relative p-4 w-full max-w-2xl max-h-full">
 
@@ -21,12 +21,11 @@ export default function Modal({ ...props }) {
                             <span className="sr-only">Close modal</span>
                         </button>
                     </div>
-
                     <div className="p-4 md:p-5 space-y-4">
                         {props.children}
                     </div>
 
-                    <div className="p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600 right-0 justify-right">
+                    <div className={`p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600 right-0 ${props?.centerButtons ? 'text-center' : 'text-right'}`}>
                         <button type="button" className="text-white bg-yellow-500 hover:bg-yellow-600 focus:ring-4 focus:outline-none 
                         focus:bg-yellow-600 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-yellow-500 dark:hover:bg-yellow-600 
                         dark:focus:ring-blue-800" onClick={() => props.onSubmit()}>{props.okText}</button>
@@ -36,6 +35,7 @@ export default function Modal({ ...props }) {
                         dark:hover:bg-gray-800 dark:focus:ring-gray-800" onClick={() => props.onCancel()}>{props.cancelText}</button>
                     </div>
                 </div>
+
             </div>
         </div>
         </>

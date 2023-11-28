@@ -10,7 +10,7 @@ export default function AdminHome(props) {
     const [isFirstSelected, setisFirstSelected] = React.useState(true)
     return (
         <>
-            <Header />
+            <Header isAdmin={true}/>
             <div className="flex flex-col px-5 lg:px-48 py-5 overflow-auto">
 
                 <div class="inline-flex gap-5 w-[100%] lg:w-[620px] rounded-md shadow-sm" role="group">
