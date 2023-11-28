@@ -34,14 +34,14 @@ export default function MyGames(props) {
                     <tbody>
                         {AdminGames.map((item, key) => {
                             return (<tr key={key} className=" text-gray-800 bg-white  dark:bg-white-800 hover:bg-gray-200 dark:hover:bg-white-200">
-                                <td scope="row" className="px-6 py-3 border-2 border border-gray-300">
-                                    {item.name}
+                                <td scope="row" className="text-center px-6 py-3 border-2 border border-gray-300">
+                                    {item?.name}
                                 </td>
-                                <td className="px-6 py-3 border-2 border border-gray-300">
-                                    {item.quantity}
+                                <td className="text-center px-6 py-3 border-2 border border-gray-300">
+                                    {item?.quantity}
                                 </td>
-                                <td className="px-6 py-3 border-2 border border-gray-300">
-                                    {item.deatils}
+                                <td className="text-center px-6 py-3 border-2 border border-gray-300">
+                                    {item?.deatils}
                                 </td>
                                 <td className="px-6 py-3 border-2 border border-gray-300">
                                     <>
@@ -87,7 +87,7 @@ export default function MyGames(props) {
             {isEditOpen && <UpdateGameModal
                 title="Update Game Details"
                 openModal={isEditOpen}
-                onSubmit={() => alert("submit")}
+                onSubmit={() => setIsEditOpen(false)}
                 onCancel={() => setIsEditOpen(false)}
                 okText={"Update"}
                 cancelText={"Cancel"}
@@ -98,12 +98,12 @@ export default function MyGames(props) {
             {isAddnewOpen && <UpdateGameModal
                 title="Add new game"
                 openModal={isAddnewOpen}
-                onSubmit={() => alert("submit")}
+                onSubmit={() => setIsAddNew(false)}
                 onCancel={() => setIsAddNew(false)}
                 okText={"Add"}
                 cancelText={"Cancel"}
                 isUpdate={false}
-                gameItem={selectedItem}
+                gameItem={null}
             />}
 
             {isDeleteOpen && <Modal

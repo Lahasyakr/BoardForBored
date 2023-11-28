@@ -33,6 +33,19 @@ const cartreducer = (state = INITIAL_STATE, action) => {
             }
         case 'REMOVE_ADMIN_ORDER':
             return { ...state, AdminOrders: state.AdminOrders.filter((item, index) => index !== action.index) }
+
+        case 'UPDATE_ADMIN_GAME':
+            return {
+                ...state, AdminGames: state.AdminGames.map((item, index) => {
+                    if (item.id == action.obj.id) {
+                        return { ...item, ...action.obj }
+                    } else {
+                        return item;
+                    }
+                })
+            }
+        case 'ADD_ADMIN_GAME':
+            return { ...state, AdminGames: [...state.AdminGames, action.obj] }
         default: return state;
     }
 

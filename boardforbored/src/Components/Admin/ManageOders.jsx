@@ -4,6 +4,7 @@
 import * as React from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { removeAdminOrder, updateAdminOrders } from "../../redux/actions";
+import { Tooltip } from "antd";
 
 
 export default function ManageOrders(props) {
@@ -39,16 +40,20 @@ export default function ManageOrders(props) {
                                     <td className="px-6 py-3 border-2 border border-gray-300">
                                         <>
                                             <div className="flex items-stretch justify-center gap-5">
-                                                <button onClick={() => dispatch(updateAdminOrders(key))} disabled={item.action !== 0} title={item.action == 0 ? `Mark it delivered` : 'Already delivered'}
-                                                    className={`text-black text-center text-lg leading-8 whitespace-nowrap self-stretch grow items-center pt-1 pb-1 px-2 rounded-xl
+                                                <Tooltip title={item.action == 0 ? `Mark it delivered` : 'Already delivered'} color="#FAB005" placement="bottom">
+                                                    <button onClick={() => dispatch(updateAdminOrders(key))} disabled={item.action !== 0}
+                                                        className={`text-black text-center text-lg leading-8 whitespace-nowrap self-stretch grow items-center pt-1 pb-1 px-2 rounded-xl
                                                  ${item.action == 0 ? 'bg-green-800 bg-opacity-60' : 'bg-gray-400 bg-opacity-60'}`}>
-                                                    Delivered
-                                                </button>
-                                                <button onClick={() => dispatch(removeAdminOrder(key))} disabled={item.action !== 1} title={item.action == 1 ? 'Mark it returned' : 'Not yet delivered'}
-                                                    className={`text-black text-center text-lg leading-8 whitespace-nowrap self-stretch grow items-center pt-1 pb-1 px-2 rounded-xl 
+                                                        Delivered
+                                                    </button>
+                                                </Tooltip>
+                                                <Tooltip title={item.action == 1 ? 'Mark it returned' : 'Not yet delivered'} color="#FAB005" placement="bottom">
+                                                    <button onClick={() => dispatch(removeAdminOrder(key))} disabled={item.action !== 1}
+                                                        className={`text-black text-center text-lg leading-8 whitespace-nowrap self-stretch grow items-center pt-1 pb-1 px-2 rounded-xl 
                                                 ${item.action == 1 ? 'bg-green-800 bg-opacity-60' : 'bg-gray-400 bg-opacity-60'}`}>
-                                                    Returned
-                                                </button>
+                                                        Returned
+                                                    </button>
+                                                </Tooltip>
                                             </div>
                                         </>
                                     </td>

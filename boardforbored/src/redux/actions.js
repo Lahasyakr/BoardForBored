@@ -46,4 +46,18 @@ export const removeAdminOrder = (index) => {
     }
 }
 
+export const updateAdminGame = (obj) => {
+    return {
+        type: 'UPDATE_ADMIN_GAME',
+        obj: obj
+    }
+}
+
+export const addAdminGame = (obj) => {
+    return {
+        type: 'ADD_ADMIN_GAME',
+        obj: obj
+    }
+}
+
 

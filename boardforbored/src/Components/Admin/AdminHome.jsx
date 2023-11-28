@@ -14,7 +14,7 @@ export default function AdminHome(props) {
             <Header isAdmin={true}/>
             <div className="flex flex-col px-5 lg:px-48 py-5 overflow-auto">
 
-                <div class="inline-flex gap-5 w-[100%] lg:w-[620px] rounded-md shadow-sm" role="group">
+                <div className="inline-flex gap-5 w-[100%] lg:w-[620px] rounded-md shadow-sm" role="group">
                     <button onClick={() => setisFirstSelected(true)}
                         className={`justify-center text-white text-center text-lg font-medium bg-gray-600 grow items-center pt-2 pb-2 rounded-xl ${!isFirstSelected ? 'bg-opacity-60' : ''}`}>
                         My games
