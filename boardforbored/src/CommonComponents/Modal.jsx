@@ -3,7 +3,7 @@ import * as React from "react";
 export default function Modal({ ...props }) {
 
     return (
-        <>{props.open} && <div aria-hidden="true" data-modal-backdrop="static" id="modal"
+        <>{props.open && <div aria-hidden="true" data-modal-backdrop="static" id="modal"
             className="backdrop-blur-sm border-gray-500 overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 flex justify-center 
         items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
             <div className="relative p-4 w-full max-w-2xl max-h-full">
@@ -37,7 +37,7 @@ export default function Modal({ ...props }) {
                 </div>
 
             </div>
-        </div>
+        </div>}
         </>
 
     )
