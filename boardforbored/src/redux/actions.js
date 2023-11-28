@@ -60,4 +60,11 @@ export const addAdminGame = (obj) => {
     }
 }
 
+export const deleteAdminGame = (index) => {
+    return {
+        type: 'DELETE_ADMIN_GAME',
+        index: index
+    }
+}
+
 

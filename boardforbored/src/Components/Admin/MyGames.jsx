@@ -1,16 +1,20 @@
 import * as React from "react";
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { gamedetails } from "../../data/gamedata";
 import { PlusCircleOutlined } from '@ant-design/icons';
 import UpdateGameModal from "./UpdateGameModal";
 import Modal from "../../CommonComponents/Modal";
+import { deleteAdminGame } from "../../redux/actions";
+import { message } from "antd";
 
 export default function MyGames(props) {
+    const dispatch = useDispatch();
     const AdminGames = useSelector((o) => o.cartreducer.AdminGames);
     const [isEditOpen, setIsEditOpen] = React.useState(false);
     const [isAddnewOpen, setIsAddNew] = React.useState(false);
     const [isDeleteOpen, setIsDeleteOpen] = React.useState(false);
     const [selectedItem, setSelectedItem] = React.useState(null);
+    const [selectkey, selectedKey] = React.useState(null);
     return (
         <div className="relative md:w-[100%] flex flex-col">
             <div className="overflow-x-auto overflow-y-auto shadow-md sm:rounded-lg">
@@ -57,6 +61,7 @@ export default function MyGames(props) {
                                                 /></button>
                                             <button onClick={() => {
                                                 setSelectedItem(item);
+                                                selectedKey(key)
                                                 setIsDeleteOpen(true);
                                             }}>
                                                 <img
@@ -110,7 +115,10 @@ export default function MyGames(props) {
                 title="Delete game"
                 open={isDeleteOpen}
                 onSubmit={() => {
-                    alert("deleted");
+                    if (selectkey) {
+                        dispatch(deleteAdminGame(selectkey));
+                        message.success("Game has been deleted successfully");
+                    }
                     setIsDeleteOpen(false)
                 }}
                 onCancel={() => setIsDeleteOpen(false)}
