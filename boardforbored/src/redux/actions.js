@@ -32,3 +32,18 @@ export const addMyOrder = (orders) => {
     }
 }
 
+export const updateAdminOrders = (index) => {
+    return {
+        type: 'UPDATE_ADMIN_ORDER',
+        index: index
+    }
+}
+
+export const removeAdminOrder = (index) => {
+    return {
+        type: 'REMOVE_ADMIN_ORDER',
+        index: index
+    }
+}
+
+

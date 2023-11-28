@@ -6,7 +6,9 @@ const INITIAL_STATE = {
     customer: { name: "User1", lastname: "", userName: "user1", password: "password", email: 'user1@gmail.com', phNo: "" },
     admin: { name: 'Admin1', lastname: "", userName: "admin1", password: "password", email: 'admin1@gmail.com', phNo: "" },
     AdminGames: gamedetails,
-    AdminOrders: []
+    AdminOrders: [{ name: 'Aiden Rem', details: 'Jaipur', action: 0 },
+    { name: 'John Doe', details: 'Phase 10', action: 1 },
+    { name: 'Will Smith', details: 'Catan', action: 1 }]
 };
 
 const cartreducer = (state = INITIAL_STATE, action) => {
@@ -22,6 +24,15 @@ const cartreducer = (state = INITIAL_STATE, action) => {
             return { ...state, customer: action.user }
         case 'ADD_ORDER':
             return { ...state, myOrders: state.myOrders.concat(action.orders) }
+        case 'UPDATE_ADMIN_ORDER':
+            return {
+                ...state, AdminOrders: state.AdminOrders.map((item, index) => {
+                    if (action.index === index) { return { ...item, action: 1 } }
+                    else return item
+                })
+            }
+        case 'REMOVE_ADMIN_ORDER':
+            return { ...state, AdminOrders: state.AdminOrders.filter((item, index) => index !== action.index) }
         default: return state;
     }
 
