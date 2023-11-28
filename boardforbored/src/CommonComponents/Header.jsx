@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useState, useCallback } from "react";
 import { useSelector } from 'react-redux';
-import { message, Badge } from 'antd';
+import { message, Badge, Tooltip } from 'antd';
 import { HomeFilled } from '@ant-design/icons';
 import { Link } from "react-router-dom";
 
@@ -42,7 +42,10 @@ export default function Header(props) {
                 alt="Logo"
               />
               {(isFull || isAdmin) && <div className="justify-center text-white text-center text-2xl self-center my-auto pb-1">
-                <Link to={isAdmin ? '/adminHome' : '/dashboard'}><HomeFilled style={{ color: "white", fontSize: "2rem" }} /></Link>
+                <Link to={isAdmin ? '/adminHome' : '/dashboard'}>
+                  <Tooltip title={'Home page'} color="gray" placement="bottom">
+                    <HomeFilled style={{ color: "white", fontSize: "2rem" }} /></Tooltip>
+                </Link>
               </div>}
               {!isAdmin && <h1 className="justify-center text-white text-center text-xl self-center my-auto">
                 <Link to='/about'>About</Link>
@@ -66,19 +69,27 @@ export default function Header(props) {
               }
             </div>
             {isFull && <div className="items-stretch flex max-w-full justify-right gap-5 max-md:max-w-full max-md:flex-wrap max-md:justify-right sm:justify-right">
-              {!isAdmin && <Badge count={cartItems?.length} color="#FAB005" style={{ marginTop: "10px" }}><Link to='/cart'><img
-                loading="lazy"
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/7a32db31-062f-4222-93b9-39ebf3e37605?apiKey=361c4900d91b476aba2cbfc84558ec7f&"
-                className="aspect-square object-contain object-center w-[50px] overflow-hidden shrink-0 max-w-full mt-1 self-start "
-                alt="Logo"
-              /></Link></Badge>}
-              <Link to={'/userinfo'} state={{ isAdmin: isAdmin }} > <img
-                loading="lazy"
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/9372e1a6-4861-4384-ab26-412f0de1c39d?apiKey=361c4900d91b476aba2cbfc84558ec7f&"
-                className="aspect-square object-contain object-center w-[50px] overflow-hidden shrink-0 max-w-full mt-1 self-start"
-                alt="Image"
-              />
+              {!isAdmin &&
+                <Tooltip title={'Your cart'} color="gray" placement="bottom">
+                  <Badge count={cartItems?.length} color="#FAB005" style={{ marginTop: "10px" }}><Link to='/cart'><img
+                    loading="lazy"
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/7a32db31-062f-4222-93b9-39ebf3e37605?apiKey=361c4900d91b476aba2cbfc84558ec7f&"
+                    className="aspect-square object-contain object-center w-[50px] overflow-hidden shrink-0 max-w-full mt-1 self-start "
+                    alt="Logo"
+                  /></Link></Badge>
+                </Tooltip>}
+
+              <Link to={'/userinfo'} state={{ isAdmin: isAdmin }} >
+                <Tooltip title={'User profile'} color="gray" placement="bottom">
+                  <img
+                    loading="lazy"
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/9372e1a6-4861-4384-ab26-412f0de1c39d?apiKey=361c4900d91b476aba2cbfc84558ec7f&"
+                    className="aspect-square object-contain object-center w-[50px] overflow-hidden shrink-0 max-w-full mt-1 self-start"
+                    alt="Image"
+                  />
+                </Tooltip>
               </Link>
+
             </div>
             }
 
