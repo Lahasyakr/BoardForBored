@@ -3,6 +3,7 @@ import * as React from "react";
 import { useSelector } from 'react-redux';
 import Header from "../../CommonComponents/Header";
 import MyGames from "./MyGames";
+import ManageOrders from "./ManageOders";
 
 
 
@@ -24,7 +25,7 @@ export default function AdminHome(props) {
                     </button>
                 </div>
                 <div className="self-stretch flex w-full items-stretch justify-between gap-px mt-3 max-md:max-w-full max-md:flex-wrap max-md:justify-center">
-                    {isFirstSelected ? <MyGames /> : <MyGames />}
+                    {isFirstSelected ? <MyGames /> : <ManageOrders />}
                 </div>
             </div>
         </>
