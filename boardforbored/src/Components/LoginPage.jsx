@@ -27,7 +27,7 @@ export default function LoginPage(props) {
         else if (name === customer.userName && password === customer.password) {
             navigate('/dashboard')
         } else if (name === admin.userName && password === admin.password) {
-            navigate('/dashboard')
+            navigate('/adminHome')
         } else {
             if (password !== customer.password) {
                 setErrorText(prevErrorTxt => ({

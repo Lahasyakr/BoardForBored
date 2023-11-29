@@ -20,9 +20,9 @@ export default function Footer() {
         alt="Content Image"
       />
       <span className="text-sm text-black-500 sm:text-center dark:text-black-400 space-x-1">
-        <LinkedinFilled style={{ color: "black", fontSize: "large"}} />
-        <FacebookFilled style={{ color: "black", fontSize: "large" }} />
-        <InstagramOutlined style={{ color: "black", fontSize: "large" }} />
+        <Link to="/about"><LinkedinFilled style={{ color: "black", fontSize: "large" }} /></Link>
+        <Link to="/about"> <FacebookFilled style={{ color: "black", fontSize: "large" }} /></Link>
+        <Link to="/about"> <InstagramOutlined style={{ color: "black", fontSize: "large" }} /></Link>
 
       </span>
       <ul className="flex flex-wrap items-center mt-3 text-sm font-medium text-black dark:text-black sm:mt-0">
