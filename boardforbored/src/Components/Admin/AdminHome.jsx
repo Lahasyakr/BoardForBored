@@ -12,7 +12,7 @@ export default function AdminHome(props) {
     return (
         <>
             <Header isAdmin={true}/>
-            <div className="flex flex-col px-5 lg:px-48 py-5 overflow-auto">
+            <div className="flex flex-col px-5 lg:px-48 py-5 mb-12 overflow-auto">
 
                 <div className="inline-flex gap-5 w-[100%] lg:w-[620px] rounded-md shadow-sm" role="group">
                     <button onClick={() => setisFirstSelected(true)}

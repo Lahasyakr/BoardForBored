@@ -21,16 +21,16 @@ export default function MyGames(props) {
                 <table className="w-full text-lg text-left rtl:text-right text-gray-500 dark:text-gray-400 border-2 border-collapse border border-gray-300">
                     <thead className="text-white text-center text-lg leading-8 whitespace-nowrap border bg-gray-600 grow items-center px-5 py-3 border-solid border-gray-300">
                         <tr>
-                            <th scope="col" className="px-6 py-3 border-2 border border border-gray-300">
+                            <th scope="col" className="px-6 py-2 border-2 border border border-gray-300">
                                 Name
                             </th>
-                            <th scope="col" className="px-6 py-3 border-2 border border-gray-300">
+                            <th scope="col" className="px-6 py-2 border-2 border border-gray-300">
                                 Qty
                             </th>
-                            <th scope="col" className="px-6 py-3 border-2 border border-gray-300">
+                            <th scope="col" className="px-6 py-2 border-2 border border-gray-300">
                                 Details
                             </th>
-                            <th scope="col" className="px-6 py-3 border-2 border border-gray-300">
+                            <th scope="col" className="px-6 py-2 border-2 border border-gray-300">
                                 Actions
                             </th>
                         </tr>
@@ -38,16 +38,16 @@ export default function MyGames(props) {
                     <tbody>
                         {AdminGames.map((item, key) => {
                             return (<tr key={key} className=" text-gray-800 bg-white  dark:bg-white-800 hover:bg-gray-200 dark:hover:bg-white-200">
-                                <td scope="row" className="text-center px-6 py-3 border-2 border border-gray-300">
+                                <td scope="row" className="text-center px-6 py-2 border-2 border border-gray-300">
                                     {item?.name}
                                 </td>
-                                <td className="text-center px-6 py-3 border-2 border border-gray-300">
+                                <td className="text-center px-6 py-2 border-2 border border-gray-300">
                                     {item?.quantity}
                                 </td>
-                                <td className="text-center px-6 py-3 border-2 border border-gray-300">
+                                <td className="text-center px-6 py-2 border-2 border border-gray-300">
                                     {item?.deatils}
                                 </td>
-                                <td className="px-6 py-3 border-2 border border-gray-300">
+                                <td className="px-6 py-2 border-2 border border-gray-300">
                                     <>
                                         <div className="flex items-stretch justify-center gap-5">
                                             <button onClick={() => {
@@ -83,7 +83,7 @@ export default function MyGames(props) {
                 }}
                     type="button" className="text-white underline bg-yellow-500 hover:bg-yellow-500/90 focus:ring-4 focus:outline-none 
                     focus:ring-yellow-500/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center 
-                    dark:focus:ring-yellow-500/55 me-2 mb-2 mt-5 ">
+                    dark:focus:ring-yellow-500/55 me-2 mb-5 mt-5 ">
                     <PlusCircleOutlined style={{ color: "white", fontSize: "large" }} className="mr-1" />
                     Add New Game
                 </button>
