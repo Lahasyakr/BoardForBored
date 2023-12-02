@@ -17,7 +17,7 @@ export default function Details(props) {
                         loading="lazy"
                         srcSet={gamedetails[props.id-1].mainPhoto}
                         className="aspect-[0.98] object-contain object-center w-[85%] h-1/5 overflow-hidden grow max-md:mt-10"
-                        alt="Image description"
+                        alt="Game image"
                     />
                 </div>
             </section>

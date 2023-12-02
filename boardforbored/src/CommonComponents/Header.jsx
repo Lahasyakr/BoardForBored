@@ -3,7 +3,8 @@ import { useState, useCallback } from "react";
 import { useSelector } from 'react-redux';
 import { message, Badge, Tooltip } from 'antd';
 import { HomeFilled } from '@ant-design/icons';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { gamedetails } from "../data/gamedata";
 
 export default function Header(props) {
   const isFull = props?.isFull == false ? props.isFull : true;
@@ -11,17 +12,35 @@ export default function Header(props) {
   const [search, setSearch] = useState("");
   const [messageApi, contextHolder] = message.useMessage();
   const cartItems = useSelector((o) => o.cartreducer.cartItems);
+  const navigate = useNavigate();
 
   const onSearch = useCallback((value) => {
     if (value != "") setSearch(value);
   }, [search])
 
   const handleSearch = () => {
-    messageApi.open({
-      type: 'warning',
-      className: 'ms-3 text-sm font-semibold border-yellow-500',
-      content: 'No Search Found',
-    });
+    if (search == '') {
+      return;
+    }
+    else {
+      let newData = JSON.parse(JSON.stringify(gamedetails));
+      let searchedItem = newData.filter((item) => {
+        return item.name.toLowerCase().includes(search.toLowerCase())
+      })
+      if (searchedItem.length > 0) {
+        navigate('/searchitem', { state: { searchedItem: searchedItem } })
+      } else {
+        messageApi.open({
+          type: 'warning',
+          className: 'ms-3 text-sm font-semibold border-yellow-500',
+          content: 'No Search Found',
+        });
+      }
+    }
+
+
+
+
   }
 
   const onEnter = (e) => {

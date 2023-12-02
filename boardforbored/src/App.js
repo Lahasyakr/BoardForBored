@@ -16,6 +16,7 @@ import UserInfo from './Components/UserManagement/UserInfo';
 import ManageProfile from './Components/UserManagement/ManageProfile';
 import MyOrders from './Components/UserManagement/MyOrders';
 import AdminHome from './Components/Admin/AdminHome';
+import SearchPage from './Components/SearchPage';
 
 class App extends Component {
   render() {
@@ -37,6 +38,7 @@ class App extends Component {
             <Route path='manageprofile' Component={ManageProfile} />
             <Route path='myorders' Component={MyOrders} />
             <Route path='adminHome' Component={AdminHome} />
+            <Route path='searchitem' Component={SearchPage} />
           </Routes>
           <Footer />
         </div>
