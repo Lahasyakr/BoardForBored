@@ -58,15 +58,15 @@ export default function Actions(props) {
             <section className="actions">
                 <div className="flex flex-col items-stretch w-full ml-5 max-md:w-full max-md:ml-0">
                     <div className="flex flex-col my-auto pb-2.5 max-md:max-w-full max-md:mt-10">
-                        <div className="items-stretch flex w-[50%] max-w-full gap-2 px-5 self-start">
-                            <div className="justify-center text-green-600 text-center text-3xl leading-8 border bg-white grow items-center px-5 py-2 rounded-3xl border-solid border-zinc-300">
+                        <div className="inline-flex w-full gap-5 px-5 self-start">
+                            <div className="flex text-green-600 text-center text-3xl leading-8 border bg-white items-center px-6 py-2 rounded-3xl border-solid border-zinc-300">
                                 $ {gameItem.price}
                             </div>
                             <div className="text-gray-600 text-center text-xl leading-5 self-center whitespace-nowrap my-auto">
                                 per day
                             </div>
                         </div>
-                        <div className="items-stretch flex w-full max-w-full gap-2 px-5 self-start flex gap-2.5 mt-4 pl-5 pr-8 py-3.5">
+                        <div className="items-stretch flex flex-wrap w-full max-w-full gap-2 px-5 self-start flex gap-2.5 mt-4 pl-5 pr-8 py-3.5">
 
                             {/*  <div className="text-gray-600 text-xl leading-6">Select Quantity</div> */}
                             <Select

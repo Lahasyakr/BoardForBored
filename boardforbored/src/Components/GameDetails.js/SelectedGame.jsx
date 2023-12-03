@@ -13,9 +13,9 @@ export default function SelectedGame(props) {
     return (
         <>
             <Header />
-            <div className="w-full justify-center md:px-40 py-5 mb-5">
+            <div className="flex flex-col flex-wrap w-full justify-center md:px-40 py-5 mb-5">
                 <Heading id={location.state.id} />
-                <div className="flex">
+                <div className="flex flex-wrap md:flex-nowrap grow">
                     <Details id={location.state.id} />
                     <Actions id={location.state.id} />
                 </div >

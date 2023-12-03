@@ -20,22 +20,22 @@ export default function Rating(props) {
                 <h1 className="text-black text-xl font-bold leading-10 w-full -mr-5 max-md:max-w-full">
                     Reviews
                 </h1>
-                <div className="flex w-[234px] max-w-full items-stretch gap-4 mt-8 self-start max-md:justify-center max-md:mt-10">
+                <div className="flex w-[234px] max-w-full items-stretch gap-4 mt-6 self-start max-md:mt-10 ml-3">
                     <Rate value={ratingData?.global} disabled />
                 </div>
-                <h2 className="text-black text-xl leading-8 w-full -mr-5 mt-1 max-md:max-w-full">
+                <h2 className="text-black text-xl leading-8 w-full -mr-5 mt-1 max-md:max-w-full ml-3">
                     {ratingData?.global} out of 5
                 </h2>
-                <h2 className="text-zinc-500 text-xl leading-8 w-full -mr-5 mt-1 max-md:max-w-full">
+                <h2 className="text-zinc-500 text-xl leading-8 w-full -mr-5 mt-1 max-md:max-w-full ml-3">
                     2 global ratings
                 </h2>
                 <button onClick={() => { setOpenModal(true) }}
-                    className="text-gray-700 text-center text-xl leading-5 whitespace-nowrap justify-center items-stretch shadow-sm bg-gray-300 bg-opacity-80 w-[209px] max-w-full mt-4 px-1 py-3 rounded-xl self-start"
+                    className="text-gray-700 text-center text-xl leading-5 ml-3 whitespace-nowrap justify-center items-stretch shadow-sm bg-gray-300 bg-opacity-80 w-[209px] max-w-full mt-4 px-1 py-3 rounded-xl self-start"
                 >
                     Add a review
                 </button>
                 {ratingData?.individualRating?.map((item, key) => {
-                    return (<div key={key} className="flex flex-col items-stretch pt-5">
+                    return (<div key={key} className="flex flex-col items-stretch pt-5 ml-3">
                         <div className="flex flex-row gap-2 pt-2 ">
                             <Avatar size={"large"}>{item?.name[0]}</Avatar>
                             <div className="justify-center text-black text-center text-xl leading-8 self-center my-auto">
