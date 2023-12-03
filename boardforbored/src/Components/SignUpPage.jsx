@@ -20,13 +20,13 @@ export default function SignUpPage(props) {
         if (password !== password_confirm) {
             newObj.password_confirm = "Password is not matching, please re-enter"
         }
-        if(!/\S+@\S+\.\S+/.test(email))newObj.email = "Please enter a valid email"
+        if (!/\S+@\S+\.\S+/.test(email)) newObj.email = "Please enter a valid email"
         setErrorText(prevErrorTxt => ({
-            ...prevErrorTxt,newObj
+            ...prevErrorTxt, newObj
         }))
-        if(!errorText.username && !errorText.email && !errorText.password && !errorText.password_confirm ){
+        if (!errorText.username && !errorText.email && !errorText.password && !errorText.password_confirm) {
             dispatch(saveUser({
-                name:username,email:email,password:password, userName:username
+                name: username, email: email, password: password, userName: username
             }))
 
             navigate('/login')
@@ -34,8 +34,8 @@ export default function SignUpPage(props) {
 
     }
     return (
-        <div className="bg-white flex flex-col">
-            <div className="flex items-center self-center w-[250px] gap-5 max-w-full">
+        <div className="bg-white flex flex-col mb-10 py-2">
+            <div className="flex items-center self-center w-[280px] gap-5 max-w-full">
                 <button onClick={() => navigate(-1)}><img
                     loading="lazy"
                     src="https://cdn.builder.io/api/v1/image/assets/TEMP/b1c89f86-1120-4927-b3bc-1a2998008e25?apiKey=361c4900d91b476aba2cbfc84558ec7f&"
@@ -46,7 +46,7 @@ export default function SignUpPage(props) {
                 <img
                     loading="lazy"
                     srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/0eb72be0-d05e-4a67-92ba-c1f9467a1917?apiKey=361c4900d91b476aba2cbfc84558ec7f&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/0eb72be0-d05e-4a67-92ba-c1f9467a1917?apiKey=361c4900d91b476aba2cbfc84558ec7f&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/0eb72be0-d05e-4a67-92ba-c1f9467a1917?apiKey=361c4900d91b476aba2cbfc84558ec7f&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/0eb72be0-d05e-4a67-92ba-c1f9467a1917?apiKey=361c4900d91b476aba2cbfc84558ec7f&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/0eb72be0-d05e-4a67-92ba-c1f9467a1917?apiKey=361c4900d91b476aba2cbfc84558ec7f&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/0eb72be0-d05e-4a67-92ba-c1f9467a1917?apiKey=361c4900d91b476aba2cbfc84558ec7f&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/0eb72be0-d05e-4a67-92ba-c1f9467a1917?apiKey=361c4900d91b476aba2cbfc84558ec7f&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/0eb72be0-d05e-4a67-92ba-c1f9467a1917?apiKey=361c4900d91b476aba2cbfc84558ec7f&"
-                    className="aspect-[1.54] object-contain object-center w-[130px] overflow-hidden self-center max-w-full mt-5 max-md:mt-5"
+                    className="aspect-[1.54] object-contain object-center w-[130px] overflow-hidden self-center flex-shrink max-w-full mt-5 max-md:mt-5"
                     alt="BFB"
                 />
             </div>
@@ -56,7 +56,7 @@ export default function SignUpPage(props) {
                     Create an account and Sign up!
                 </p>
             </div>
-            <div className="text-white text-md leading-5 whitespace-nowrap justify-center bg-gray-600 self-center w-[450px] max-w-full mt-5 px-5 py-4 rounded-xl max-md:pl-2.5">
+            <div className="text-white text-md leading-5 whitespace-nowrap justify-center bg-gray-600 self-center w-[450px] max-w-full mt-5 px-5 py-3 rounded-xl max-md:pl-2.5">
                 <input type="text" id="username" className="h-auto border-none focus:outline-none bg-gray-600 placeholder:text-white"
                     placeholder="Username" onChange={() => setErrorText(prevErrorTxt => ({
                         ...prevErrorTxt,
@@ -64,7 +64,7 @@ export default function SignUpPage(props) {
                     }))} />
             </div>
             {errorText.username && < span className="self-center w-[450px] text-red-500 pl-1">{errorText.username}</span>}
-            <div className="text-white text-md leading-5 whitespace-nowrap justify-center bg-gray-600 self-center w-[450px] max-w-full mt-5 px-5 py-4 rounded-xl max-md:pl-2.5">
+            <div className="text-white text-md leading-5 whitespace-nowrap justify-center bg-gray-600 self-center w-[450px] max-w-full mt-5 px-5 py-3 rounded-xl max-md:pl-2.5">
                 <input type="email" id="email" className="h-auto border-none focus:outline-none bg-gray-600 placeholder:text-white"
                     placeholder="Email" onChange={() => setErrorText(prevErrorTxt => ({
                         ...prevErrorTxt,
@@ -72,7 +72,7 @@ export default function SignUpPage(props) {
                     }))} />
             </div>
             {errorText.email && < span className="self-center w-[450px] text-red-500 pl-1">{errorText.email}</span>}
-            <div className="text-white text-md leading-5 whitespace-nowrap justify-center bg-gray-600 self-center w-[450px] max-w-full mt-5 px-5 py-4 rounded-xl max-md:pl-2.5">
+            <div className="text-white text-md leading-5 whitespace-nowrap justify-center bg-gray-600 self-center w-[450px] max-w-full mt-5 px-5 py-3 rounded-xl max-md:pl-2.5">
                 <input type="password" id="password" className="h-auto border-none focus:outline-none bg-gray-600 placeholder:text-white"
                     placeholder="Password" onChange={() => setErrorText(prevErrorTxt => ({
                         ...prevErrorTxt,
@@ -80,7 +80,7 @@ export default function SignUpPage(props) {
                     }))} />
             </div>
             {errorText.password && < span className="self-center w-[450px] text-red-500 pl-1">{errorText.password}</span>}
-            <div className="text-white text-md leading-5 whitespace-nowrap justify-center bg-gray-600 self-center w-[450px] max-w-full mt-5 px-5 py-4 rounded-xl max-md:pl-2.5">
+            <div className="text-white text-md leading-5 whitespace-nowrap justify-center bg-gray-600 self-center w-[450px] max-w-full mt-5 px-5 py-3 rounded-xl max-md:pl-2.5">
                 <input type="password" id="confirm-password" className="h-auto border-none focus:outline-none bg-gray-600 placeholder:text-white"
                     placeholder="Re-enter password" onChange={() => setErrorText(prevErrorTxt => ({
                         ...prevErrorTxt,
@@ -89,9 +89,16 @@ export default function SignUpPage(props) {
             </div>
             {errorText.password_confirm && < span className="self-center w-[450px] text-red-500 pl-1">{errorText.password_confirm}</span>}
             <button onClick={onSignUp}
-                className="h-12 text-white text-center text-xl  leading-5 capitalize whitespace-nowrap justify-center items-center shadow-sm bg-yellow-500 self-center w-[450px] max-w-full mt-5 px-5 py-4 mb-2 rounded-xl">
+                className="h-12 text-white text-center text-xl  leading-5 capitalize whitespace-nowrap justify-center items-center shadow-sm bg-yellow-500 self-center w-[450px] max-w-full mt-5 px-5 py-3 mb-2 rounded-xl">
                 Sign up
             </button>
+            <Link to="/login"
+                className="text-yellow-500 text-center text-xl  w-full items-stretch self-stretch
+                 justify-center mt-1 px-5 max-md:max-w-full mb-10"
+            >
+                <span className="text-gray-600">Already have an account? </span>
+                <Link to="/login"><span className="text-yellow-500 font-semibold">Log In</span></Link>
+            </Link>
 
         </div >
     );

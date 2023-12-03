@@ -46,19 +46,28 @@ export default function LoginPage(props) {
     }
     return (
         <section className="bg-white flex flex-col">
-            <img
-                loading="lazy"
-                srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/0eb72be0-d05e-4a67-92ba-c1f9467a1917?apiKey=361c4900d91b476aba2cbfc84558ec7f&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/0eb72be0-d05e-4a67-92ba-c1f9467a1917?apiKey=361c4900d91b476aba2cbfc84558ec7f&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/0eb72be0-d05e-4a67-92ba-c1f9467a1917?apiKey=361c4900d91b476aba2cbfc84558ec7f&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/0eb72be0-d05e-4a67-92ba-c1f9467a1917?apiKey=361c4900d91b476aba2cbfc84558ec7f&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/0eb72be0-d05e-4a67-92ba-c1f9467a1917?apiKey=361c4900d91b476aba2cbfc84558ec7f&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/0eb72be0-d05e-4a67-92ba-c1f9467a1917?apiKey=361c4900d91b476aba2cbfc84558ec7f&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/0eb72be0-d05e-4a67-92ba-c1f9467a1917?apiKey=361c4900d91b476aba2cbfc84558ec7f&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/0eb72be0-d05e-4a67-92ba-c1f9467a1917?apiKey=361c4900d91b476aba2cbfc84558ec7f&"
-                className="aspect-[1.54] object-contain object-center w-[130px] overflow-hidden self-center max-w-full mt-5 max-md:mt-5"
-                alt="BFB"
-            />
+            <div className="flex items-center self-center w-[280px] gap-5 max-w-full">
+                <button onClick={() => navigate(-1)}><img
+                    loading="lazy"
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/b1c89f86-1120-4927-b3bc-1a2998008e25?apiKey=361c4900d91b476aba2cbfc84558ec7f&"
+                    className="aspect-square object-contain object-center w-12 overflow-hidden justify-right max-w-full mt-5 max-md:mt-5"
+                    alt="back"
+                /></button>
+
+                <img
+                    loading="lazy"
+                    srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/0eb72be0-d05e-4a67-92ba-c1f9467a1917?apiKey=361c4900d91b476aba2cbfc84558ec7f&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/0eb72be0-d05e-4a67-92ba-c1f9467a1917?apiKey=361c4900d91b476aba2cbfc84558ec7f&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/0eb72be0-d05e-4a67-92ba-c1f9467a1917?apiKey=361c4900d91b476aba2cbfc84558ec7f&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/0eb72be0-d05e-4a67-92ba-c1f9467a1917?apiKey=361c4900d91b476aba2cbfc84558ec7f&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/0eb72be0-d05e-4a67-92ba-c1f9467a1917?apiKey=361c4900d91b476aba2cbfc84558ec7f&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/0eb72be0-d05e-4a67-92ba-c1f9467a1917?apiKey=361c4900d91b476aba2cbfc84558ec7f&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/0eb72be0-d05e-4a67-92ba-c1f9467a1917?apiKey=361c4900d91b476aba2cbfc84558ec7f&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/0eb72be0-d05e-4a67-92ba-c1f9467a1917?apiKey=361c4900d91b476aba2cbfc84558ec7f&"
+                    className="aspect-[1.54] object-contain object-center w-[130px] overflow-hidden flex-shrink self-center max-w-full mt-5 max-md:mt-5"
+                    alt="BFB"
+                />
+            </div>
             <section className="items-center self-center flex w-[550px] max-w-full flex-col mt-2 px-5">
                 <h1 className="text-gray-600 text-center text-4xl w-[257px]">Login</h1>
                 <p className="text-gray-600 text-center text-base self-stretch -mr-5 mt-2 max-md:max-w-full">
                     Login to rent your game now!
                 </p>
             </section>
-            <div className="text-white text-xl leading-5 whitespace-nowrap justify-center bg-gray-600 self-center w-[450px] max-w-full mt-5 px-5 py-4 rounded-xl max-md:pl-2.5">
+            <div className="text-white text-xl leading-5 whitespace-nowrap justify-center bg-gray-600 self-center w-[450px] max-w-full mt-5 px-5 py-3 rounded-xl max-md:pl-2.5">
                 <input type="text" id="username" className="border-none focus:outline-none bg-gray-600 placeholder:text-white h-auto" placeholder="Username"
                     onChange={() => setErrorText(prevErrorTxt => ({
                         ...prevErrorTxt,
@@ -66,7 +75,7 @@ export default function LoginPage(props) {
                     }))} />
             </div>
             {errorText.username && < span className="self-center w-[450px] text-red-500 pl-1">{errorText.username}</span>}
-            <div className="text-white text-xl leading-5 whitespace-nowrap justify-center bg-gray-600 self-center w-[450px] max-w-full mt-5 px-5 py-4 rounded-xl max-md:pl-2.5">
+            <div className="text-white text-xl leading-5 whitespace-nowrap justify-center bg-gray-600 self-center w-[450px] max-w-full mt-5 px-5 py-3 rounded-xl max-md:pl-2.5">
                 <input type="password" id="password" className="border-none focus:outline-none bg-gray-600 placeholder:text-white h-auto"
                     placeholder="Password" onChange={() => setErrorText(prevErrorTxt => ({
                         ...prevErrorTxt,
@@ -90,9 +99,16 @@ export default function LoginPage(props) {
                 </a>
             </div>
             <button onClick={onLogin}
-                className="h-12 text-white text-center text-xl leading-5 capitalize whitespace-nowrap justify-center items-center shadow-sm bg-yellow-500 self-center w-[450px] max-w-full mt-5 px-5 py-4 mb-2 rounded-xl">
+                className="h-12 text-white text-center text-xl leading-5 capitalize whitespace-nowrap justify-center items-center shadow-sm bg-yellow-500 self-center w-[450px] max-w-full mt-5 px-5 py-3 mb-2 rounded-xl">
                 Login
             </button>
+            <Link to="/signUp"
+                className="text-yellow-500 text-center text-xl  w-full items-stretch self-stretch
+                 justify-center mt-1 px-5 max-md:max-w-full mb-10"
+            > 
+                <span className="text-gray-600">Create a new account? </span>
+                <Link to="/signUp"><span className="text-yellow-500 font-semibold">Sign Up</span></Link>
+            </Link>
         </section>
     );
 }
