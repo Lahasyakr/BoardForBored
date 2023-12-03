@@ -6,6 +6,7 @@ export const gamedetails =
             price: "3",
             quantity:4,
             deatils:"",
+            category:['Fun', 'Card Games'],
             rating: {
                 global: 4.5,
                 individualRating: [
@@ -34,6 +35,7 @@ export const gamedetails =
             price: "3",
             quantity:4,
             deatils:"",
+            category:['Fun', 'Card Games'],
             rating: {
                 global: 3,
                 individualRating: [
@@ -59,6 +61,7 @@ export const gamedetails =
         {
             id: 3,
             name: "Ticket To Ride",
+            category:['Fun', 'Card Games','Adventure'],
             price: "5",
             quantity:2,
             deatils:"",
@@ -83,6 +86,7 @@ export const gamedetails =
             id: 4,
             name: "Sequence",
             price: "3",
+            category:['Fun', 'Card Games','Strategic'],
             quantity:4,
             deatils:"",
             rating: {
@@ -112,6 +116,7 @@ export const gamedetails =
             name: "Wingspan",
             price: "5",
             quantity:3,
+            category:['Fun','Strategic'],
             deatils:"",
             rating: {
                 global: 4.5,
@@ -147,6 +152,7 @@ export const gamedetails =
             price: "5",
             quantity:3,
             deatils:"",
+            category:['Fun', 'Dice','Strategic'],
             rating: {
                 global: 4,
                 individualRating: [
@@ -169,6 +175,7 @@ export const gamedetails =
             price: "5",
             quantity:5,
             deatils:"",
+            category:['Fun'],
             rating: {
                 global: 4,
                 individualRating: [
@@ -199,6 +206,7 @@ export const gamedetails =
         {
             id: 8,
             name: "Doomlings",
+            category:['Fun'],
             price: "5",
             quantity:2,
             deatils:"",
