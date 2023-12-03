@@ -23,14 +23,14 @@ export default function AboutBFB(props) {
                                 </span>
                             </div>
 
-                            <div className="relative lg:max-w-md">
+                            <div className="relative lg:max-w-md px-5">
                                 <img srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/84b5daf5-5d35-4931-b5d8-ed8621e8ff21?apiKey=361c4900d91b476aba2cbfc84558ec7f&width=100 100w,
                                  https://cdn.builder.io/api/v1/image/assets/TEMP/84b5daf5-5d35-4931-b5d8-ed8621e8ff21?apiKey=361c4900d91b476aba2cbfc84558ec7f&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/84b5daf5-5d35-4931-b5d8-ed8621e8ff21?apiKey=361c4900d91b476aba2cbfc84558ec7f&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/84b5daf5-5d35-4931-b5d8-ed8621e8ff21?apiKey=361c4900d91b476aba2cbfc84558ec7f&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/84b5daf5-5d35-4931-b5d8-ed8621e8ff21?apiKey=361c4900d91b476aba2cbfc84558ec7f&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/84b5daf5-5d35-4931-b5d8-ed8621e8ff21?apiKey=361c4900d91b476aba2cbfc84558ec7f&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/84b5daf5-5d35-4931-b5d8-ed8621e8ff21?apiKey=361c4900d91b476aba2cbfc84558ec7f&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/84b5daf5-5d35-4931-b5d8-ed8621e8ff21?apiKey=361c4900d91b476aba2cbfc84558ec7f&"
                                     className="aspect-[1.83] object-contain object-center w-full overflow-hidden mt-16 max-md:max-w-full max-md:mt-10 relative z-10 object-cover w-full rounded h-96 opacity-70"
                                     alt="aboutimage"
                                 />
                                 <div
-                                    className="absolute bottom-0 right-0 z-10 p-8 bg-white border-4 border-yellow-500 rounded shadow dark:border-yellow-500 lg:-mb-8 lg:-mr-11 sm:p-8 dark:text-gray-300 dark:bg-gray-800 ">
+                                    className="absolute bottom-0 right-0 z-10 p-4 bg-white border-4 border-yellow-500 rounded shadow dark:border-yellow-500 lg:-mb-8 lg:-mr-11 sm:p-4 dark:text-gray-300 dark:bg-gray-800 ">
                                     <p className="text-lg font-semibold md:w-72">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                                             className="absolute top-0 left-0 w-16 h-16 text-blue-700 dark:text-gray-800 opacity-10"
