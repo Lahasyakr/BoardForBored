@@ -9,7 +9,7 @@
 }
 
 .actions .ant-select:not(.ant-select-disabled):not(.ant-select-customize-input):not(.ant-pagination-size-changer):hover .ant-select-selector {
-    border-color: gray  !important;
+    border-color: gray !important;
 }
 
 .actions .ant-select-focused.ant-select:not(.ant-select-disabled):not(.ant-select-customize-input):not(.ant-pagination-size-changer) .ant-select-selector {
@@ -24,7 +24,8 @@
     font-size: small !important;
     background-color: rgb(55 65 81 / var(--tw-bg-opacity)) !important;
 }
-.updateModal .ant-select-selection-item{
+
+.updateModal .ant-select-selection-item {
     color: white !important;
     font-size: small;
 }
@@ -36,7 +37,7 @@
 }
 
 .updateModal .ant-select:not(.ant-select-disabled):not(.ant-select-customize-input):not(.ant-pagination-size-changer):hover .ant-select-selector {
-    border-color: rgb(55 65 81 / var(--tw-bg-opacity))  !important;
+    border-color: rgb(55 65 81 / var(--tw-bg-opacity)) !important;
     background-color: rgb(55 65 81 / var(--tw-bg-opacity)) !important;
 }
 
@@ -45,7 +46,8 @@
     box-shadow: none !important;
     background-color: rgb(55 65 81 / var(--tw-bg-opacity)) !important;
 }
-.updateModal .ant-select-arrow{
+
+.updateModal .ant-select-arrow {
     color: white !important
 }
 
@@ -65,53 +67,53 @@
 }
 
 .actions .ant-picker:hover {
-    border-color: gray!important;
+    border-color: gray !important;
 }
 
 .actions .ant-picker-focused.ant-picker {
-    border-color: gray!important;
-    box-shadow: none!important;
+    border-color: gray !important;
+    box-shadow: none !important;
 }
 
 .actions .ant-picker-range .ant-picker-active-bar {
-    background: none!important;
+    background: none !important;
 }
 
 .actions .ant-picker-dropdown .ant-picker-cell-in-view.ant-picker-cell-selected .ant-picker-cell-inner,
 .actions .ant-picker-dropdown .ant-picker-cell-in-view.ant-picker-cell-range-start .ant-picker-cell-inner,
 .actions .ant-picker-dropdown .ant-picker-cell-in-view.ant-picker-cell-range-end .ant-picker-cell-inner {
-    background-color: gray!important;
-    border-color: 1px solid #FDD836!important;
+    background-color: gray !important;
+    border-color: 1px solid #FDD836 !important;
 }
 
 .actions .ant-picker-cell .ant-picker-cell-in-view .ant-picker-cell-range-end {
-    border-color: 1px solid #FDD836!important;
+    border-color: 1px solid #FDD836 !important;
 }
 
 .actions .ant-picker {
-    font-size: large!important;
+    font-size: large !important;
 }
 
 
 /*checkout select*/
 .checkout .ant-select-selection-placeholder {
-    color: rgb(55 65 81 / var(--tw-bg-opacity))!important;
-    font-size: large!important;
+    color: rgb(55 65 81 / var(--tw-bg-opacity)) !important;
+    font-size: large !important;
 }
 
 .checkout .ant-select-selector {
-    border-radius: 10px!important;
-    border: none!important;
-    font-size: large!important;
+    border-radius: 10px !important;
+    border: none !important;
+    font-size: large !important;
     background-color: rgb(244 244 245) !important;
 }
 
 .checkout .ant-select-selection-item {
-    color: rgb(55 65 81 / var(--tw-bg-opacity))!important;
+    color: rgb(55 65 81 / var(--tw-bg-opacity)) !important;
 }
 
 .checkout :where(.css-dev-only-do-not-override-1adbn6x).ant-select:not(.ant-select-customize-input) .ant-select-selector {
-    border: none!important;
+    border: none !important;
     background-color: rgb(244 244 245) !important;
 }
 
@@ -121,41 +123,46 @@
 
 .checkout .ant-select-focused:where(.css-dev-only-do-not-override-1adbn6x).ant-select:not(.ant-select-disabled):not(.ant-select-customize-input):not(.ant-pagination-size-changer) .ant-select-selector {
     border-color: rgb(244 244 245) !important;
-    box-shadow: none!important;
+    box-shadow: none !important;
 }
 
 /*carddetails select */
 
 .carddetails .ant-select-selection-placeholder {
-    color: white!important;
-    font-size: 1rem!important;
-    line-height: 1.5rem!important;
+    color: white !important;
+    font-size: 1rem !important;
+    line-height: 1.5rem !important;
 }
 
 .carddetails .ant-select-selector {
-    border-radius: 10px!important;
-    border: none!important;
-    font-size: large!important;
-    background-color: rgb(75 85 99 / var(--tw-bg-opacity))!important;
+    border-radius: 10px !important;
+    border: none !important;
+    font-size: large !important;
+    background-color: rgb(75 85 99 / var(--tw-bg-opacity)) !important;
 }
 
 .carddetails .ant-select-selection-item {
-    color: white!important;
+    color: white !important;
 }
-.carddetails .ant-select-arrow{
-    color: white!important;
+
+.carddetails .ant-select-arrow {
+    color: white !important;
 }
 
 .carddetails :where(.css-dev-only-do-not-override-1adbn6x).ant-select:not(.ant-select-customize-input) .ant-select-selector {
-    border: none!important;
-    background-color: rgb(75 85 99 / var(--tw-bg-opacity))!important;
+    border: none !important;
+    background-color: rgb(75 85 99 / var(--tw-bg-opacity)) !important;
 }
 
 .carddetails :where(.css-dev-only-do-not-override-1adbn6x).ant-select:not(.ant-select-disabled):not(.ant-select-customize-input):not(.ant-pagination-size-changer):hover .ant-select-selector {
-    border-color: rgb(75 85 99 / var(--tw-bg-opacity))!important;
+    border-color: rgb(75 85 99 / var(--tw-bg-opacity)) !important;
 }
 
 .carddetails .ant-select-focused:where(.css-dev-only-do-not-override-1adbn6x).ant-select:not(.ant-select-disabled):not(.ant-select-customize-input):not(.ant-pagination-size-changer) .ant-select-selector {
-    border-color: rgb(75 85 99 / var(--tw-bg-opacity))!important;
-    box-shadow: none!important;
+    border-color: rgb(75 85 99 / var(--tw-bg-opacity)) !important;
+    box-shadow: none !important;
+}
+
+.orderDetails .ant-select-arrow {
+    color: black !important;
 }

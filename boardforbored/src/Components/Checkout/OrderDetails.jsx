@@ -15,7 +15,7 @@ export default function OrderDetails(props) {
 
         <>
             <Header />
-            <section className="flex flex-col items-stretch px-80 py-5">
+            <section className="flex flex-col items-stretch px-80 py-5 orderDetails">
                 <header className="flex w-full justify-between gap-5 px-5 max-md:max-w-full max-md:flex-wrap">
                     <button onClick={() => navigate(-1)}><img
                         loading="lazy"
