@@ -66,7 +66,7 @@ export default function Actions(props) {
                                 per day
                             </div>
                         </div>
-                        <div className="items-stretch flex flex-wrap w-full max-w-full gap-2 px-5 self-start flex gap-2.5 mt-4 pl-5 pr-8 py-3.5">
+                        <div className="items-stretch flex flex-wrap md:flex-nowrap w-full max-w-full gap-2 px-5 self-start flex gap-2.5 mt-4 pl-5 pr-8 py-3.5">
 
                             {/*  <div className="text-gray-600 text-xl leading-6">Select Quantity</div> */}
                             <Select
