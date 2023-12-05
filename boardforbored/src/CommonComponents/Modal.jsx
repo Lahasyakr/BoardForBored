@@ -8,7 +8,7 @@ export default function Modal({ ...props }) {
         items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
             <div className="relative p-4 w-full max-w-2xl max-h-full">
 
-                <div className="relative bg-white rounded-lg shadow dark:bg-gray-200">
+                <div className="relative bg-gray-200 rounded-lg shadow dark:bg-gray-200">
 
                     <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-300">
                         <h3 className="text-xl font-semibold text-gray-300 dark:text-gray-600">
