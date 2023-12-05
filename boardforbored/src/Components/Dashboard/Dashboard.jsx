@@ -7,7 +7,7 @@ export default function Dashboard(props) {
 
         <>
             <Header />
-            <main className="font-serif flex flex-col items-stretch px-20">
+            <main className="font-serif flex flex-col items-stretch px-20 py-5">
                 <section className="self-center w-full max-w-[1054px] px-5 max-md:max-w-full">
                     <div className="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
                         <div className="flex flex-col items-stretch w-[49%] max-md:w-full max-md:ml-0">

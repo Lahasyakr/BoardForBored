@@ -45,7 +45,7 @@ export default function LoginPage(props) {
         }
     }
     return (
-        <section className="bg-white flex flex-col">
+        <section className="bg-white flex flex-col py-2">
             <div className="flex items-center self-center w-[280px] gap-5 max-w-full">
                 <button onClick={() => navigate(-1)}><img
                     loading="lazy"

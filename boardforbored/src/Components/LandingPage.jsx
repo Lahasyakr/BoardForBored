@@ -6,7 +6,7 @@ export default function LandingPage(props) {
   return (
     <>
       <Header isFull={false}/>
-      <div className="font-serif flex flex-col">
+      <div className="font-serif flex flex-col py-5">
         <section className="self-stretch w-full px-5 pr-9 pl-9 md:pl-28 max-md:max-w-full max-md:pr-5">
           <div className="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
             <div className="flex flex-col items-stretch w-[51%] max-md:w-full max-md:ml-0">
@@ -44,7 +44,7 @@ export default function LandingPage(props) {
           </Link>
         </div>
         <section className="self-stretch flex w-full justify-between gap-5 mt-8 pl-8 pr-9 md:pl-24 max-md:max-w-full max-md:flex-wrap max-md:mt-10">
-          <h2 className=" justify-center text-yellow-500 text-3xl leading-10 grow px-5 max-md:max-w-full max-md:text-2xl">
+          <h2 className=" justify-center text-yellow-500 text-2xl leading-10 grow px-5 max-md:max-w-full max-md:text-2xl">
             Ready to borrow your fun?
           </h2>
          {/*  <div className="items-stretch flex justify-between gap-5 mt-5 px-5 self-end max-md:mt-10">
