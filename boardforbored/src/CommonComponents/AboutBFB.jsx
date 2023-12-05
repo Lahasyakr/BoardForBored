@@ -30,7 +30,7 @@ export default function AboutBFB(props) {
                                     alt="aboutimage"
                                 />
                                 <div
-                                    className="absolute bottom-0 right-0 z-10 p-4 bg-white border-4 border-yellow-500 rounded shadow dark:border-yellow-500 lg:-mb-8 lg:-mr-11 sm:p-4 dark:text-gray-300 dark:bg-gray-800 ">
+                                    className="absolute bottom-0 right-0 z-10 p-4 bg-gray-800 border-4 border-yellow-500 rounded shadow dark:border-yellow-500 lg:-mb-8 lg:-mr-11 sm:p-4 dark:text-gray-300 dark:bg-gray-800 ">
                                     <p className="text-lg font-semibold md:w-72">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                                             className="absolute top-0 left-0 w-16 h-16 text-blue-700 dark:text-gray-800 opacity-10"
