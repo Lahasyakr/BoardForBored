@@ -29,7 +29,7 @@ export default function AboutBFB(props) {
                                     className="aspect-[1.83] object-contain object-center w-full overflow-hidden mt-16 max-md:max-w-full max-md:mt-10 relative z-10 object-cover w-full rounded h-96 opacity-70"
                                     alt="aboutimage"
                                 />
-                                <div
+                               {/*  <div
                                     className="absolute bottom-0 right-0 z-10 p-4 bg-gray-800 border-4 border-yellow-500 rounded shadow dark:border-yellow-500 lg:-mb-8 lg:-mr-11 sm:p-4 dark:text-gray-300 dark:bg-gray-800 ">
                                     <p className="text-lg font-semibold md:w-72">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
@@ -40,7 +40,7 @@ export default function AboutBFB(props) {
                                             </path>
                                         </svg> Successfully Completed our project
                                     </p>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                         <div className="w-full px-6 mb-10 lg:w-1/2 lg:mb-0 ">
