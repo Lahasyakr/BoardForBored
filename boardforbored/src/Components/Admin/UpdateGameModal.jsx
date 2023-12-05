@@ -113,7 +113,7 @@ export default function UpdateGameModal(props) {
                                 }))
                             }
                             }
-                            className="block p-2.5 w-full text-sm text-gray-900 bg-gray-700 rounded-lg border 
+                            className="block p-2.5 w-full text-sm text-white bg-gray-700 rounded-lg border 
                     border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 
                     placeholder:text-white
                     dark:placeholder-white-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -126,7 +126,7 @@ export default function UpdateGameModal(props) {
                                 ...prevGame,
                                 deatils: e.target.value
                             }))}
-                            className="block p-2.5 mt-5 w-full text-sm text-gray-900 bg-gray-700 rounded-lg border 
+                            className="block p-2.5 mt-5 w-full text-sm text-white bg-gray-700 rounded-lg border 
                     border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 
                     placeholder:text-white
                     dark:placeholder-white-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -146,7 +146,7 @@ export default function UpdateGameModal(props) {
                                         price: null
                                     }))
                                 }}
-                                className="block p-2.5 w-full text-sm text-gray-900 bg-gray-700 rounded-lg border 
+                                className="block p-2.5 w-full text-sm text-white bg-gray-700 rounded-lg border 
                     border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 
                     placeholder:text-white
                     dark:placeholder-white-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
