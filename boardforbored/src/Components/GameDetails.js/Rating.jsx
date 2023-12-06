@@ -68,7 +68,7 @@ export default function Rating(props) {
                 <Rate value={newRating} onChange={(value) => setNewRating(value)} />
                 {/*  <label for="message" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-600">Your message</label> */}
                 <textarea id="message" rows="4" onChange={(e) => setNewReview(e.target.value)}
-                    className="block p-2.5 w-full text-sm text-gray-900 bg-gray-700 rounded-lg border 
+                    className="block p-2.5 w-full text-sm text-white bg-gray-700 rounded-lg border 
                     border-gray-600 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 
                     placeholder:text-white
                     dark:placeholder-white-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
