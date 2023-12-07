@@ -21,7 +21,7 @@ export default function ManageOrders(props) {
                                     Name
                                 </th>
                                 <th scope="col" className="px-6 py-3 border-2 border border-gray-300">
-                                    Order Deatils
+                                    Order Details
                                 </th>
                                 <th scope="col" className="px-6 py-3 border-2 border border-gray-300">
                                     Actions
