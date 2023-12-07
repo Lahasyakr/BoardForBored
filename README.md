@@ -27,16 +27,14 @@ You need to have Node.js and npm installed on your machine.
        git clone https://github.com/Lahasyakr/BoardForBored.git
    
 2. Install dependencies
-
        npm install
 3. Start the development server
- 
- ### License
-This project is licensed under the [MIT License](LICENSE). 
-
        npm start
 
 
 5. Open http://localhost:3000 to view it in the browser
 
 The page will reload if you make edits.
+
+ ### License
+This project is licensed under the [MIT License](LICENSE). 
