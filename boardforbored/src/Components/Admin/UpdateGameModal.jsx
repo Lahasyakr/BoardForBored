@@ -61,10 +61,19 @@ export default function UpdateGameModal(props) {
         if (!gameItem.price) {
             setErrorText(prevErrorTxt => ({
                 ...prevErrorTxt,
-                price: "Please enter price"
+                price: "Please enter valid price"
             }))
             flag = true;
+        } else {
+            if (gameItem.price < 1) {
+                setErrorText(prevErrorTxt => ({
+                    ...prevErrorTxt,
+                    price: "Price should be greater than 0"
+                }))
+                flag = true;
+            }
         }
+
         if (!gameItem.quantity) {
             setErrorText(prevErrorTxt => ({
                 ...prevErrorTxt,
@@ -79,7 +88,7 @@ export default function UpdateGameModal(props) {
         let flag = validation()
         if (!flag && !errorText.title && !errorText.price && !errorText.quantity) {
             if (props?.isUpdate) {
-                dispatch(updateAdminGame({...props.gameItem , ...gameItem}));
+                dispatch(updateAdminGame({ ...props.gameItem, ...gameItem }));
             }
             else {
                 dispatch(addAdminGame({ ...dummyGameObj, id: AdminGames.length + 1, ...gameItem }))
@@ -135,7 +144,7 @@ export default function UpdateGameModal(props) {
 
                     <div className="inline-flex gap-5 mt-5">
                         <Tooltip title={`${props.isUpdate ? " Update price in $" : ""}`} color="#FAB005" placement="bottomLeft">
-                            <input type="number" value={props.isUpdate ? gameItem.price : null}
+                            <input type="number" min="0" value={props.isUpdate ? gameItem.price : null}
                                 onChange={(e) => {
                                     setGameItem(prevGame => ({
                                         ...prevGame,
