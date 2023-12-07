@@ -1,4 +1,4 @@
-# <a href="[https://lahasyakr.github.io/CS682-Project4b/documentation/index.html](https://lahasyakr.github.io/BoardForBored/)">Board For Bored</a>
+# <a href="https://lahasyakr.github.io/BoardForBored/">Board For Bored</a>
 ### CS615-User Interface Design
 
 This is a React project built using Tailwind for styling and AntD as the UI library.
