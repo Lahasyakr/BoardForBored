@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { UserOutlined } from '@ant-design/icons';
 import Header from "../../CommonComponents/Header";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { saveUser } from "../../redux/actions";
+import { saveAdmin, saveUser } from "../../redux/actions";
 import { message } from 'antd';
 
 export default function ManageProfile(props) {
@@ -35,10 +35,16 @@ export default function ManageProfile(props) {
                 className: 'ms-6 text-sm font-semibold text-gray-800',
                 content: 'User information - saved successfully',
             });
-
+            if(location?.state?.isAdmin ){
+                dispatch(saveAdmin({
+                    name: name, email: email, phNo: phNo, lastname: lastname
+                }))
+            }
+           else{
             dispatch(saveUser({
                 name: name, email: email, phNo: phNo, lastname: lastname
             }))
+           }
 
             /* navigate('/userinfo', { state: { onEvent: 'success' } }); */
 

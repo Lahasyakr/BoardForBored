@@ -25,6 +25,13 @@ export const saveUser = (user) => {
     }
 }
 
+export const saveAdmin = (user) => {
+    return {
+        type: 'SAVE_ADMIN',
+        user: user
+    }
+}
+
 export const addMyOrder = (orders) => {
     return {
         type: 'ADD_ORDER',

@@ -22,6 +22,8 @@ const cartreducer = (state = INITIAL_STATE, action) => {
             return { ...state, cartItems: [] };
         case 'SAVE_USER':
             return { ...state, customer: action.user }
+        case 'SAVE_ADMIN':
+            return { ...state, admin: action.user }
         case 'ADD_ORDER':
             return { ...state, myOrders: state.myOrders.concat(action.orders) }
         case 'UPDATE_ADMIN_ORDER':
@@ -46,9 +48,9 @@ const cartreducer = (state = INITIAL_STATE, action) => {
             }
         case 'ADD_ADMIN_GAME':
             return { ...state, AdminGames: [...state.AdminGames, action.obj] }
-        
+
         case 'DELETE_ADMIN_GAME':
-            return {...state, AdminGames:state.AdminGames.filter((item, index) => index !== action.index)}
+            return { ...state, AdminGames: state.AdminGames.filter((item, index) => index !== action.index) }
         default: return state;
     }
 
